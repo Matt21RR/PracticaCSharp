@@ -2,21 +2,25 @@ using System;
 using System.IO;
 using System.Text.Json;
 
-class InscripcionesPersonas
+public class InscripcionesPersonas
 {
-    private List<Persona> listado { get; set; }
+    private List<Persona> _listado { get; set; }
 
+    public InscripcionesPersonas(List<Persona> listado)
+    {
+        this._listado = listado;
+    }
     public void inscribir(Persona persona){
-        listado.Add(persona);
+        _listado.Add(persona);
     }
     public void eliminar(Persona persona){
-        listado.RemoveAt(buscarPersona(persona));
+        _listado.RemoveAt(buscarPersona(persona));
     }
     private int buscarPersona(Persona persona){
-        return listado.FindIndex(person => person.ID == persona.ID);
+        return _listado.FindIndex(person => person.ID == persona.ID);
     }
     public void actualizar(Persona persona){
-        listado[buscarPersona(persona)] = persona;
+        _listado[buscarPersona(persona)] = persona;
     }
 
     public void guardarInformacion(Persona persona){
@@ -26,7 +30,6 @@ class InscripcionesPersonas
     }
     public void cargarDatos(){
       string jsonString = File.ReadAllText("InscripcionesPersonas.json");
-      listado = JsonSerializer.Deserialize<List<Persona>>(jsonString);
-      //? Borra el archivo después de cargar los datos?
+      _listado = JsonSerializer.Deserialize<List<Persona>>(jsonString);
     }
 }

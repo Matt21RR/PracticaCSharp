@@ -3,44 +3,54 @@ using System.IO;
 using System.Text.Json;
 
 public class CursosInscritos : Servicios {
-    private List<Inscripcion> listado { get; set; }
+    private List<Inscripcion> _listado { get; set; }
 
-    public void inscribir(Inscripcion inscripcion){
-        listado.Add(inscripcion);
+    public List<Inscripcion> listado { get { return _listado; } set { _listado = value; } }
+
+    public CursosInscritos()
+    {
+        this._listado = new List<Inscripcion>();
+    }
+    public CursosInscritos(List<Inscripcion> listado)
+    {
+        this._listado = listado;
+    }
+    public void inscribirCurso(Inscripcion inscripcion){
+        _listado.Add(inscripcion);
     }
     public void eliminar(Inscripcion inscripcion){
-        listado.RemoveAt(buscarInscripcion(inscripcion));
+        _listado.RemoveAt(buscarInscripcion(inscripcion));
     }
     private int buscarInscripcion(Inscripcion inscripcion){
-        return listado.FindIndex(insc => insc.estudiante.ID == inscripcion.estudiante.ID && insc.curso.ID == inscripcion.curso.ID);
+        return _listado.FindIndex(insc => insc.estudiante.ID == inscripcion.estudiante.ID && insc.curso.ID == inscripcion.curso.ID);
     }
     public void actualizar(Inscripcion inscripcion){
-        listado[buscarInscripcion(inscripcion)] = inscripcion;
+        _listado[buscarInscripcion(inscripcion)] = inscripcion;
     }
-    public void guardarInformacion(CursoProfesor cursoProfesor){
+    public void guardarInformacion(Inscripcion inscripcion){
       //TODO: Modificar para que no se sobreescriba la información
-      string jsonString = JsonSerializer.Serialize(cursoProfesor);
+      string jsonString = JsonSerializer.Serialize(inscripcion);
       File.WriteAllText("CursosProfesores.json", jsonString);
     }
     public void cargarDatos(){  
       string jsonString = File.ReadAllText("CursosProfesores.json");
-      listado = JsonSerializer.Deserialize<List<Inscripcion>>(jsonString);
+      _listado = JsonSerializer.Deserialize<List<Inscripcion>>(jsonString);
       //? Borra el archivo después de cargar los datos?
     }
 
     public List<string> toString(){
-        List<string> temp = new List<string>();
-        foreach(Inscripcion ii in listado){
-            temp.Add(ii.toString());
+        List<string> listaCursosInscritos = new List<string>();
+        foreach(Inscripcion ii in _listado){
+            listaCursosInscritos.Add(ii.toString());
         }
-        return temp;
+        return listaCursosInscritos;
     }
 
     public string imprimirPosicion(int posicion){
-        return listado[posicion].toString();
+        return _listado[posicion].toString();
     }
     public int cantidadActual(){
-        return listado.Count;
+        return _listado.Count;
     }
 
     public List<string> imprimirListado(){
