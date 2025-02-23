@@ -18,6 +18,6 @@ public class Curso
         this._activo = activo;
     }
     public string toString(){
-        return $"Curso: {ID} {nombre} {programa} {activo}";
+        return $"Curso: {_ID} {_nombre} {_programa} {_activo}";
     }
 }

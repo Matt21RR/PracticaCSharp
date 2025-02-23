@@ -18,6 +18,6 @@ public class Inscripcion{
     }
      
     public string toString(){
-        return $"Inscripcion: {curso} {anio} {semestre} {estudiante}";
+        return $"Inscripcion: {_curso} {_anio} {_semestre} {_estudiante.toString()}";
     }
 }

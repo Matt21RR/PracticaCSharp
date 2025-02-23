@@ -18,6 +18,6 @@ public class CursoProfesor
     }
 
     public string toString(){
-        return $"Curso profesor: {curso} {profesor}  {semestre} {anio}";
+        return $"Curso profesor: {_curso} {_profesor}  {_semestre} {_anio}";
     }
 }

@@ -1,12 +1,242 @@
 {
   "Version": 1,
   "WorkspaceRootPath": "C:\\Users\\VILL\\Documents\\PracticaCSharp\\",
-  "Documents": [],
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{DFF709EE-105E-2ABA-4596-7CE8BF8C3FF1}|PracticaCSharp.csproj|c:\\users\\vill\\documents\\practicacsharp\\actividad.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DFF709EE-105E-2ABA-4596-7CE8BF8C3FF1}|PracticaCSharp.csproj|solutionrelative:actividad.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DFF709EE-105E-2ABA-4596-7CE8BF8C3FF1}|PracticaCSharp.csproj|c:\\users\\vill\\documents\\practicacsharp\\cursosinscritos.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DFF709EE-105E-2ABA-4596-7CE8BF8C3FF1}|PracticaCSharp.csproj|solutionrelative:cursosinscritos.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DFF709EE-105E-2ABA-4596-7CE8BF8C3FF1}|PracticaCSharp.csproj|c:\\users\\vill\\documents\\practicacsharp\\leerescribirarchivos.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DFF709EE-105E-2ABA-4596-7CE8BF8C3FF1}|PracticaCSharp.csproj|solutionrelative:leerescribirarchivos.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DFF709EE-105E-2ABA-4596-7CE8BF8C3FF1}|PracticaCSharp.csproj|c:\\users\\vill\\documents\\practicacsharp\\inscripcion.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DFF709EE-105E-2ABA-4596-7CE8BF8C3FF1}|PracticaCSharp.csproj|solutionrelative:inscripcion.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DFF709EE-105E-2ABA-4596-7CE8BF8C3FF1}|PracticaCSharp.csproj|c:\\users\\vill\\documents\\practicacsharp\\inscripcionespersonas.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DFF709EE-105E-2ABA-4596-7CE8BF8C3FF1}|PracticaCSharp.csproj|solutionrelative:inscripcionespersonas.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DFF709EE-105E-2ABA-4596-7CE8BF8C3FF1}|PracticaCSharp.csproj|c:\\users\\vill\\documents\\practicacsharp\\cursosprofesores.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DFF709EE-105E-2ABA-4596-7CE8BF8C3FF1}|PracticaCSharp.csproj|solutionrelative:cursosprofesores.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DFF709EE-105E-2ABA-4596-7CE8BF8C3FF1}|PracticaCSharp.csproj|c:\\users\\vill\\documents\\practicacsharp\\programa.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DFF709EE-105E-2ABA-4596-7CE8BF8C3FF1}|PracticaCSharp.csproj|solutionrelative:programa.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DFF709EE-105E-2ABA-4596-7CE8BF8C3FF1}|PracticaCSharp.csproj|c:\\users\\vill\\documents\\practicacsharp\\facultad.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DFF709EE-105E-2ABA-4596-7CE8BF8C3FF1}|PracticaCSharp.csproj|solutionrelative:facultad.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DFF709EE-105E-2ABA-4596-7CE8BF8C3FF1}|PracticaCSharp.csproj|c:\\users\\vill\\documents\\practicacsharp\\persona.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DFF709EE-105E-2ABA-4596-7CE8BF8C3FF1}|PracticaCSharp.csproj|solutionrelative:persona.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DFF709EE-105E-2ABA-4596-7CE8BF8C3FF1}|PracticaCSharp.csproj|c:\\users\\vill\\documents\\practicacsharp\\profesor.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DFF709EE-105E-2ABA-4596-7CE8BF8C3FF1}|PracticaCSharp.csproj|solutionrelative:profesor.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DFF709EE-105E-2ABA-4596-7CE8BF8C3FF1}|PracticaCSharp.csproj|c:\\users\\vill\\documents\\practicacsharp\\estudiante.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DFF709EE-105E-2ABA-4596-7CE8BF8C3FF1}|PracticaCSharp.csproj|solutionrelative:estudiante.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DFF709EE-105E-2ABA-4596-7CE8BF8C3FF1}|PracticaCSharp.csproj|c:\\users\\vill\\documents\\practicacsharp\\curso.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DFF709EE-105E-2ABA-4596-7CE8BF8C3FF1}|PracticaCSharp.csproj|solutionrelative:curso.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DFF709EE-105E-2ABA-4596-7CE8BF8C3FF1}|PracticaCSharp.csproj|c:\\users\\vill\\documents\\practicacsharp\\cursoprofesor.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DFF709EE-105E-2ABA-4596-7CE8BF8C3FF1}|PracticaCSharp.csproj|solutionrelative:cursoprofesor.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
   "DocumentGroupContainers": [
     {
       "Orientation": 0,
       "VerticalTabListWidth": 256,
-      "DocumentGroups": []
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "actividad.cs",
+              "DocumentMoniker": "C:\\Users\\VILL\\Documents\\PracticaCSharp\\actividad.cs",
+              "RelativeDocumentMoniker": "actividad.cs",
+              "ToolTip": "C:\\Users\\VILL\\Documents\\PracticaCSharp\\actividad.cs*",
+              "RelativeToolTip": "actividad.cs*",
+              "ViewState": "AgIAAAUAAAAAAAAAAADwvyUAAAA8AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-02-23T19:30:51.568Z",
+              "IsPinned": true,
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "Programa.cs",
+              "DocumentMoniker": "C:\\Users\\VILL\\Documents\\PracticaCSharp\\Programa.cs",
+              "RelativeDocumentMoniker": "Programa.cs",
+              "ToolTip": "C:\\Users\\VILL\\Documents\\PracticaCSharp\\Programa.cs",
+              "RelativeToolTip": "Programa.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAqwBgAAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-02-23T20:00:33.299Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "Persona.cs",
+              "DocumentMoniker": "C:\\Users\\VILL\\Documents\\PracticaCSharp\\Persona.cs",
+              "RelativeDocumentMoniker": "Persona.cs",
+              "ToolTip": "C:\\Users\\VILL\\Documents\\PracticaCSharp\\Persona.cs",
+              "RelativeToolTip": "Persona.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAqwBQAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-02-23T19:59:59.158Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "Profesor.cs",
+              "DocumentMoniker": "C:\\Users\\VILL\\Documents\\PracticaCSharp\\Profesor.cs",
+              "RelativeDocumentMoniker": "Profesor.cs",
+              "ToolTip": "C:\\Users\\VILL\\Documents\\PracticaCSharp\\Profesor.cs",
+              "RelativeToolTip": "Profesor.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAvAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-02-23T19:59:47.542Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "CursosInscritos.cs",
+              "DocumentMoniker": "C:\\Users\\VILL\\Documents\\PracticaCSharp\\CursosInscritos.cs",
+              "RelativeDocumentMoniker": "CursosInscritos.cs",
+              "ToolTip": "C:\\Users\\VILL\\Documents\\PracticaCSharp\\CursosInscritos.cs",
+              "RelativeToolTip": "CursosInscritos.cs",
+              "ViewState": "AgIAACoAAAAAAAAAAAAswD8AAAAlAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-02-23T19:35:52.246Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "InscripcionesPersonas.cs",
+              "DocumentMoniker": "C:\\Users\\VILL\\Documents\\PracticaCSharp\\InscripcionesPersonas.cs",
+              "RelativeDocumentMoniker": "InscripcionesPersonas.cs",
+              "ToolTip": "C:\\Users\\VILL\\Documents\\PracticaCSharp\\InscripcionesPersonas.cs",
+              "RelativeToolTip": "InscripcionesPersonas.cs",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAAABsAAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-02-23T19:32:05.717Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "CursosProfesores.cs",
+              "DocumentMoniker": "C:\\Users\\VILL\\Documents\\PracticaCSharp\\CursosProfesores.cs",
+              "RelativeDocumentMoniker": "CursosProfesores.cs",
+              "ToolTip": "C:\\Users\\VILL\\Documents\\PracticaCSharp\\CursosProfesores.cs",
+              "RelativeToolTip": "CursosProfesores.cs",
+              "ViewState": "AgIAABsAAAAAAAAAAAAAwDQAAAAuAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-02-23T19:52:10.383Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Inscripcion.cs",
+              "DocumentMoniker": "C:\\Users\\VILL\\Documents\\PracticaCSharp\\Inscripcion.cs",
+              "RelativeDocumentMoniker": "Inscripcion.cs",
+              "ToolTip": "C:\\Users\\VILL\\Documents\\PracticaCSharp\\Inscripcion.cs",
+              "RelativeToolTip": "Inscripcion.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABYAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-02-23T19:58:21.389Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "LeerEscribirArchivos.cs",
+              "DocumentMoniker": "C:\\Users\\VILL\\Documents\\PracticaCSharp\\LeerEscribirArchivos.cs",
+              "RelativeDocumentMoniker": "LeerEscribirArchivos.cs",
+              "ToolTip": "C:\\Users\\VILL\\Documents\\PracticaCSharp\\LeerEscribirArchivos.cs",
+              "RelativeToolTip": "LeerEscribirArchivos.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAqwBEAAAAyAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-02-23T21:20:00.356Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "Facultad.cs",
+              "DocumentMoniker": "C:\\Users\\VILL\\Documents\\PracticaCSharp\\Facultad.cs",
+              "RelativeDocumentMoniker": "Facultad.cs",
+              "ToolTip": "C:\\Users\\VILL\\Documents\\PracticaCSharp\\Facultad.cs",
+              "RelativeToolTip": "Facultad.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAqwBEAAAAtAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-02-23T20:01:11.086Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "Estudiante.cs",
+              "DocumentMoniker": "C:\\Users\\VILL\\Documents\\PracticaCSharp\\Estudiante.cs",
+              "RelativeDocumentMoniker": "Estudiante.cs",
+              "ToolTip": "C:\\Users\\VILL\\Documents\\PracticaCSharp\\Estudiante.cs",
+              "RelativeToolTip": "Estudiante.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABIAAABFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-02-23T19:58:39.952Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "CursoProfesor.cs",
+              "DocumentMoniker": "C:\\Users\\VILL\\Documents\\PracticaCSharp\\CursoProfesor.cs",
+              "RelativeDocumentMoniker": "CursoProfesor.cs",
+              "ToolTip": "C:\\Users\\VILL\\Documents\\PracticaCSharp\\CursoProfesor.cs",
+              "RelativeToolTip": "CursoProfesor.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABQAAABFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-02-23T19:36:42.179Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "Curso.cs",
+              "DocumentMoniker": "C:\\Users\\VILL\\Documents\\PracticaCSharp\\Curso.cs",
+              "RelativeDocumentMoniker": "Curso.cs",
+              "ToolTip": "C:\\Users\\VILL\\Documents\\PracticaCSharp\\Curso.cs",
+              "RelativeToolTip": "Curso.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAqwBYAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-02-23T19:35:35.604Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
     }
   ]
 }

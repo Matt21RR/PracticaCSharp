@@ -16,6 +16,6 @@ public class Estudiante: Persona
         this._promedio = promedio;
     }
     public override string toString(){
-        return $"Estudiante: {base.toString()} {codigo} {programa} {activo} {promedio}";
+        return $"Estudiante: {base.toString()} {_codigo} {_programa} {_promedio} {_activo} ";
     } 
 }

@@ -4,22 +4,33 @@ using System.Text.Json;
 
 public class CursosProfesores : Servicios
 {
-    private List<CursoProfesor> _listado { get; set; }
+    private List<CursoProfesor> _listado;
+    public List<CursoProfesor> listado { get { return _listado; } set { _listado = value; } }
 
+    public CursosProfesores()
+    {
+        this._listado = new List<CursoProfesor>();
+    }
+    public CursosProfesores(List<CursoProfesor> listado)
+    {
+        this._listado = listado;
+    }
+    ~CursosProfesores()
+    {
+        actualizarInformacionGuardada();
+    }
     public void inscribir(CursoProfesor cursoProfesor){
         _listado.Add(cursoProfesor);
     }
-    public void guardarInformacion(CursoProfesor cursoProfesor){
-      //TODO: Modificar para que no se sobreescriba la información
-      string jsonString = JsonSerializer.Serialize(cursoProfesor);
-      File.WriteAllText("CursosProfesores.json", jsonString);
+    public void guardarInformacion(CursoProfesor cursoProfesor)
+    {
+        LeerEscribirArchivos.escribir(cursoProfesor, "CursosProfesores.json");
+    }
+    public void cargarDatos()
+    {
+        _listado = LeerEscribirArchivos.leer<List<CursoProfesor>>("CursosProfesores.json");
+    }
 
-    }
-    public void cargarDatos(){
-      string jsonString = File.ReadAllText("CursosProfesores.json");
-      _listado = JsonSerializer.Deserialize<List<CursoProfesor>>(jsonString);
-      //? Borra el archivo después de cargar los datos?
-    }
     public List<string> toString(){
         List<string> temp = new List<string>();
         foreach(CursoProfesor cc in _listado){
@@ -37,5 +48,14 @@ public class CursosProfesores : Servicios
 
     public List<string> imprimirListado(){
       return this.toString();
+    }
+
+    private void actualizarInformacionGuardada()
+    {
+        LeerEscribirArchivos.eliminar("CursosProfesores.json");
+        foreach (CursoProfesor cc in _listado)
+        {
+            guardarInformacion(cc);
+        }
     }
 }

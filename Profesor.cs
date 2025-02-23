@@ -7,6 +7,6 @@ public class Profesor: Persona
         this._tipoContrato = tipoContrato;
     }
     public override string toString(){
-        return $"Profesor: {base.toString()} {tipoContrato}";
+        return $"Profesor: {base.toString()} {_tipoContrato}";
     }
 }

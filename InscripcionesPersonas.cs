@@ -4,12 +4,22 @@ using System.Text.Json;
 
 public class InscripcionesPersonas
 {
-    private List<Persona> _listado { get; set; }
+    private List<Persona> _listado;
+    public List<Persona> listado { get { return _listado; } set { _listado = value; } }
 
+    public InscripcionesPersonas()
+    {
+        this._listado = new List<Persona>();
+    }
     public InscripcionesPersonas(List<Persona> listado)
     {
         this._listado = listado;
     }
+    ~InscripcionesPersonas()
+    {
+        actualizarInformacionGuardada();
+    }
+
     public void inscribir(Persona persona){
         _listado.Add(persona);
     }
@@ -24,12 +34,19 @@ public class InscripcionesPersonas
     }
 
     public void guardarInformacion(Persona persona){
-      //TODO: Modificar para que no se sobreescriba la información
-      string jsonString = JsonSerializer.Serialize(persona);
-      File.WriteAllText("InscripcionesPersonas.json", jsonString);
+        LeerEscribirArchivos.escribir(persona, "InscripcionesPersonas.json");
     }
     public void cargarDatos(){
-      string jsonString = File.ReadAllText("InscripcionesPersonas.json");
-      _listado = JsonSerializer.Deserialize<List<Persona>>(jsonString);
+        _listado = LeerEscribirArchivos.leer<List<Persona>>("InscripcionesPersonas.json");
+    }
+
+
+    private void actualizarInformacionGuardada()
+    {
+        LeerEscribirArchivos.eliminar("InscripcionesPersonas.json");
+        foreach (Persona pp in _listado)
+        {
+            guardarInformacion(pp);
+        }
     }
 }
