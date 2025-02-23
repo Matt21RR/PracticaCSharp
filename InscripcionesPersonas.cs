@@ -1,3 +1,7 @@
+using System;
+using System.IO;
+using System.Text.Json;
+
 class InscripcionesPersonas
 {
     private List<Persona> listado { get; set; }
@@ -16,9 +20,13 @@ class InscripcionesPersonas
     }
 
     public void guardarInformacion(Persona persona){
-
+      //TODO: Modificar para que no se sobreescriba la información
+      string jsonString = JsonSerializer.Serialize(persona);
+      File.WriteAllText("InscripcionesPersonas.json", jsonString);
     }
     public void cargarDatos(){
-
+      string jsonString = File.ReadAllText("InscripcionesPersonas.json");
+      listado = JsonSerializer.Deserialize<List<Persona>>(jsonString);
+      //? Borra el archivo después de cargar los datos?
     }
 }
