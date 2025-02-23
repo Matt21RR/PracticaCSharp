@@ -16,7 +16,7 @@ public static class WR
 
     public static T read<T>(string path){
         string jsonString = "[";
-        if (File.Exists("InscripcionesPersonas.json")){
+        if (File.Exists(path)){
           IEnumerable<string> lines = File.ReadLines(path);
           for(int i = 0; i < lines.Count(); i++){
               if(i != 0){

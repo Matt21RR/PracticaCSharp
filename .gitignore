@@ -3,3 +3,4 @@
 # dotnet compile data
 /bin
 /obj
+/.vs
