@@ -3,7 +3,4 @@
 # dotnet compile data
 /bin
 /obj
-.vs/PracticaCSharp/FileContentIndex/4a30d88d-b672-4951-aee9-9cf07d063822.vsidx
-.vs/PracticaCSharp/FileContentIndex/846e471d-b2fd-41a3-be70-c6ba7e435143.vsidx
-.vs/PracticaCSharp/FileContentIndex/a1a68b5a-d6ba-4793-8040-838520aa149f.vsidx
-*.db
+/.vs
