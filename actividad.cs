@@ -35,6 +35,5 @@ class Principal
         Console.WriteLine(inscripcionJuan.toString());
 
         cursosInscritos.inscribirCurso(inscripcionJuan);
-        cursosInscritos.guardarInformacion(inscripcionJuan);
     }
 }
