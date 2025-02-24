@@ -15,10 +15,6 @@ public class CursosProfesores : Servicios
     {
         this._listado = listado;
     }
-    ~CursosProfesores()
-    {
-        actualizarInformacionGuardada();
-    }
     public void inscribir(CursoProfesor cursoProfesor){
         _listado.Add(cursoProfesor);
     }
@@ -50,9 +46,9 @@ public class CursosProfesores : Servicios
       return this.toString();
     }
 
-    private void actualizarInformacionGuardada()
+    public void actualizarInformacionGuardada()
     {
-        LeerEscribirArchivos.eliminar("CursosProfesores.json");
+        LeerEscribirArchivos.vaciar("CursosProfesores.json");
         foreach (CursoProfesor cc in _listado)
         {
             guardarInformacion(cc);

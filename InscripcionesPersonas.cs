@@ -15,10 +15,7 @@ public class InscripcionesPersonas
     {
         this._listado = listado;
     }
-    ~InscripcionesPersonas()
-    {
-        actualizarInformacionGuardada();
-    }
+   
 
     public void inscribir(Persona persona){
         _listado.Add(persona);
@@ -41,9 +38,9 @@ public class InscripcionesPersonas
     }
 
 
-    private void actualizarInformacionGuardada()
+    public void actualizarInformacionGuardada()
     {
-        LeerEscribirArchivos.eliminar("InscripcionesPersonas.json");
+        LeerEscribirArchivos.vaciar("InscripcionesPersonas.json");
         foreach (Persona pp in _listado)
         {
             guardarInformacion(pp);

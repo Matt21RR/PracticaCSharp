@@ -15,10 +15,7 @@ public class CursosInscritos : Servicios {
     {
         this._listado = listado;
     }
-    ~CursosInscritos()
-    {
-        actualizarInformacionGuardada();
-    }
+    
     public void inscribirCurso(Inscripcion inscripcion){
         _listado.Add(inscripcion);
     }
@@ -59,9 +56,9 @@ public class CursosInscritos : Servicios {
         return this.toString();
     }
 
-    private void actualizarInformacionGuardada()
+    public void actualizarInformacionGuardada()
     {
-        LeerEscribirArchivos.eliminar("CursosInscritos.json");
+        LeerEscribirArchivos.vaciar("CursosInscritos.json");
         foreach (Inscripcion ii in _listado)
         {
             guardarInformacion(ii);
