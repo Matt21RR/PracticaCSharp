@@ -7,6 +7,6 @@ public class Profesor: Persona
         this._tipoContrato = tipoContrato;
     }
     public override string toString(){
-        return $"Profesor: {base.toString()} {_tipoContrato}";
+        return $"-->Profesor:\n\t {base.toString().Replace("\t ","\t\t ")}\n\t Tipo Contrato:{_tipoContrato}";
     }
 }

@@ -18,6 +18,6 @@ public class Inscripcion{
     }
      
     public string toString(){
-        return $"Inscripcion: {_curso} {_anio} {_semestre} {_estudiante.toString()}";
+        return $"Inscripcion: \n\t{_curso.toString().Replace("\t ","\t\t ")} \n\tAño:{_anio} \n\tSemestre:{_semestre} \n\t{_estudiante.toString().Replace("\t ","\t\t ")}";
     }
 }

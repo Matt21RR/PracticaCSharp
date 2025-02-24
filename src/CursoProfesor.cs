@@ -18,6 +18,6 @@ public class CursoProfesor
     }
 
     public string toString(){
-        return $"Curso profesor: {_curso} {_profesor}  {_semestre} {_anio}";
+        return $"Curso profesor:\n\t {_curso.toString().Replace("\t ","\t\t ")}\n\t {_profesor.toString().Replace("\t ","\t\t")}\n\t Semestre:{_semestre}\n\t Año:{_anio}";
     }
 }

@@ -15,6 +15,6 @@ public class Facultad
     }
 
     public string toString(){
-        return $"Facultad: {_ID} {_nombre} {_decano}";
+        return $"-->Facultad:\n\t Id:{_ID}\n\t Nombre:{_nombre}\n\t Decano:{_decano}";
     }
 }

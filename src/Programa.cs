@@ -21,6 +21,6 @@ public class Programa
     }
 
     public string toString(){
-        return $"Programa: {_ID} {_nombre} {_duracion} {_registro} {_facultad}";
+        return $"-->Programa:\n\t Id:{_ID}\n\t Nombre:{_nombre}\n\t Duracion:{_duracion}\n\t Registro:{_registro}\n\t Facultad:{_facultad}";
     }
 }

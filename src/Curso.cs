@@ -18,6 +18,6 @@ public class Curso
         this._activo = activo;
     }
     public string toString(){
-        return $"Curso: {_ID} {_nombre} {_programa} {_activo}";
+        return $"-->Curso:\n\t id:{_ID}\n\t Nombre:{_nombre}\n\t {_programa.toString().Replace("\t ","\t\t ")}\n\t Activo:{_activo}";
     }
 }

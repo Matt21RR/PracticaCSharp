@@ -16,6 +16,6 @@ public class Estudiante: Persona
         this._promedio = promedio;
     }
     public override string toString(){
-        return $"Estudiante: {base.toString()} {_codigo} {_programa} {_promedio} {_activo} ";
+        return $"-->Estudiante:\n\t {base.toString().Replace("\t ","\t\t ")}\n\t Codigo:{_codigo}\n\t Programa: {_programa}\n\t Promedio:{_promedio}\n\t Activo:{_activo} ";
     } 
 }

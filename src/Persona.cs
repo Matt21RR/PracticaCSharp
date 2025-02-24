@@ -16,6 +16,6 @@ public class Persona
         this._email = email;
     }
     public virtual string toString(){
-        return $"Persona: {_ID} {_nombres} {_apellidos} {_email}";
+        return $"-->Persona:\n\t Id:{_ID}\n\t Nombres:{_nombres}\n\t Apellidos:{_apellidos}\n\t Email:{_email}";
     }
 }
