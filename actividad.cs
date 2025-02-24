@@ -14,7 +14,7 @@ class Principal
         if (LeerEscribirArchivos.existe("CursosProfesores.json")) cursosProfesores.cargarDatos();
 
         
-        //crearEjemplo(cursosInscritos, inscripcionesPersonas, cursosProfesores);
+        crearEjemplo(cursosInscritos, inscripcionesPersonas, cursosProfesores);
 
 
         Console.WriteLine(string.Join(Environment.NewLine, cursosInscritos.imprimirListado()));

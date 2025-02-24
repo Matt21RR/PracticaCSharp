@@ -5,8 +5,18 @@ using System.Text.Json;
 
 public static class LeerEscribirArchivos
 {
+    private static string rutaDirectorioDatosPrograma = Path.Combine(Environment.CurrentDirectory, "./programData/");
+    private static void crearDirectorioDatosPrograma()
+    {
+        if (!Directory.Exists(rutaDirectorioDatosPrograma))
+        {
+            Directory.CreateDirectory(rutaDirectorioDatosPrograma);
+        }
+    }
     public static void escribir<T>(T value, string nombreArchivo)
     {
+        nombreArchivo = Path.Combine(rutaDirectorioDatosPrograma, nombreArchivo);
+        crearDirectorioDatosPrograma();
         try
         {
             string jsonString = JsonSerializer.Serialize(value);
@@ -20,10 +30,12 @@ public static class LeerEscribirArchivos
 
     public static void eliminar(string nombreArchivo)
     {
+        nombreArchivo = Path.Combine(rutaDirectorioDatosPrograma, nombreArchivo);
         File.Delete(nombreArchivo);
     }
     public static void vaciar(string nombreArchivo)
     {
+        nombreArchivo = Path.Combine(rutaDirectorioDatosPrograma, nombreArchivo);
         try
         {
             if (!existe(nombreArchivo))
@@ -37,11 +49,13 @@ public static class LeerEscribirArchivos
     }
     public static bool existe(string nombreArchivo)
     {
+        nombreArchivo = Path.Combine(rutaDirectorioDatosPrograma, nombreArchivo);
         return File.Exists(nombreArchivo);
     }
 
     public static T leer<T>(string nombreArchivo)
     {
+        nombreArchivo = Path.Combine(rutaDirectorioDatosPrograma, nombreArchivo);
         try
         {
             if (!existe(nombreArchivo))
