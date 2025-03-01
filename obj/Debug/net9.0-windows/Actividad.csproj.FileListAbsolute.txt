@@ -1,0 +1,15 @@
+C:\Users\VILL\Documents\PracticaCSharp\bin\Debug\net9.0-windows\Actividad.exe
+C:\Users\VILL\Documents\PracticaCSharp\bin\Debug\net9.0-windows\Actividad.deps.json
+C:\Users\VILL\Documents\PracticaCSharp\bin\Debug\net9.0-windows\Actividad.runtimeconfig.json
+C:\Users\VILL\Documents\PracticaCSharp\bin\Debug\net9.0-windows\Actividad.dll
+C:\Users\VILL\Documents\PracticaCSharp\bin\Debug\net9.0-windows\Actividad.pdb
+C:\Users\VILL\Documents\PracticaCSharp\obj\Debug\net9.0-windows\Actividad.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\VILL\Documents\PracticaCSharp\obj\Debug\net9.0-windows\Actividad.AssemblyInfoInputs.cache
+C:\Users\VILL\Documents\PracticaCSharp\obj\Debug\net9.0-windows\Actividad.AssemblyInfo.cs
+C:\Users\VILL\Documents\PracticaCSharp\obj\Debug\net9.0-windows\Actividad.csproj.CoreCompileInputs.cache
+C:\Users\VILL\Documents\PracticaCSharp\obj\Debug\net9.0-windows\Actividad.sourcelink.json
+C:\Users\VILL\Documents\PracticaCSharp\obj\Debug\net9.0-windows\Actividad.dll
+C:\Users\VILL\Documents\PracticaCSharp\obj\Debug\net9.0-windows\refint\Actividad.dll
+C:\Users\VILL\Documents\PracticaCSharp\obj\Debug\net9.0-windows\Actividad.pdb
+C:\Users\VILL\Documents\PracticaCSharp\obj\Debug\net9.0-windows\Actividad.genruntimeconfig.cache
+C:\Users\VILL\Documents\PracticaCSharp\obj\Debug\net9.0-windows\ref\Actividad.dll

@@ -35,7 +35,7 @@ public class CursosProfesores : Servicios
         return temp;
     }
 
-    public string imprimirPosicion(int posicion){
+    public string ImprimirPosicion(int posicion){
         return _listado[posicion].toString();
     }
     public int cantidadActual(){

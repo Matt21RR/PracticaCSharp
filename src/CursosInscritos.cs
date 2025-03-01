@@ -45,7 +45,7 @@ public class CursosInscritos : Servicios {
         return listaCursosInscritos;
     }
 
-    public string imprimirPosicion(int posicion){
+    public string ImprimirPosicion(int posicion){
         return _listado[posicion].toString();
     }
     public int cantidadActual(){
