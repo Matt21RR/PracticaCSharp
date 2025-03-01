@@ -3,7 +3,7 @@ using System.Text.Json;
 
 class Principal
 {
-    static void Main()
+    static void lalala()
     {
         InscripcionesPersonas inscripcionesPersonas = new InscripcionesPersonas();
         if (LeerEscribirArchivos.existe("InscripcionesPersonas.json")) inscripcionesPersonas.cargarDatos();

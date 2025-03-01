@@ -13,3 +13,11 @@ C:\Users\VILL\Documents\PracticaCSharp\obj\Debug\net9.0-windows\refint\Actividad
 C:\Users\VILL\Documents\PracticaCSharp\obj\Debug\net9.0-windows\Actividad.pdb
 C:\Users\VILL\Documents\PracticaCSharp\obj\Debug\net9.0-windows\Actividad.genruntimeconfig.cache
 C:\Users\VILL\Documents\PracticaCSharp\obj\Debug\net9.0-windows\ref\Actividad.dll
+C:\Users\VILL\Documents\PracticaCSharp\obj\Debug\net9.0-windows\Actividad.Form1.resources
+C:\Users\VILL\Documents\PracticaCSharp\obj\Debug\net9.0-windows\Actividad.csproj.GenerateResource.cache
+C:\Users\VILL\Documents\PracticaCSharp\obj\Debug\net9.0-windows\Actividad.Properties.Resources.resources
+C:\Users\VILL\Documents\PracticaCSharp\obj\Debug\net9.0-windows\Actividad.view.EstudianteForm.resources
+C:\Users\VILL\Documents\PracticaCSharp\obj\Debug\net9.0-windows\Actividad.view.FacultadForm.resources
+C:\Users\VILL\Documents\PracticaCSharp\obj\Debug\net9.0-windows\Actividad.view.PersonaForm.resources
+C:\Users\VILL\Documents\PracticaCSharp\obj\Debug\net9.0-windows\Actividad.view.ProfesorForm.resources
+C:\Users\VILL\Documents\PracticaCSharp\obj\Debug\net9.0-windows\Actividad.view.ProgramaForm.resources
