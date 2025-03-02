@@ -104,9 +104,11 @@
             // 
             semestreInput.Dock = DockStyle.Fill;
             semestreInput.Location = new Point(505, 18);
+            semestreInput.Minimum = new decimal(new int[] { 1, 0, 0, 0 });
             semestreInput.Name = "semestreInput";
             semestreInput.Size = new Size(246, 23);
             semestreInput.TabIndex = 18;
+            semestreInput.Value = new decimal(new int[] { 1, 0, 0, 0 });
             // 
             // label4
             // 
@@ -152,6 +154,7 @@
             guardarCursoProfesor.TabIndex = 5;
             guardarCursoProfesor.Text = "Guardar curso del profesor";
             guardarCursoProfesor.UseVisualStyleBackColor = true;
+            guardarCursoProfesor.Click += guardarCursoProfesor_Click;
             // 
             // cursoCombo
             // 

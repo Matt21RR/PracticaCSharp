@@ -27,9 +27,17 @@ namespace Actividad.view
             string nombre = nombreInput.Text;
             Programa programa = (Programa)programaCombo.SelectedItem;
             bool activo = activoCheckBox.Checked;
+
+            if (nombre == "" || programa is null)
+            {
+                MessageBox.Show("Por favor, llena todos los campos.");
+                return;
+            }
+
             Curso curso = new Curso(centralDatos.Cursos.Count + 1,nombre, programa, activo);
 
             centralDatos.Cursos.Add(curso);
+            MessageBox.Show("¡Se Creo correctamente!\n\n" + curso.toString());
         }
     }
 }

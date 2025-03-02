@@ -139,6 +139,7 @@
             guardarProfesor.TabIndex = 5;
             guardarProfesor.Text = "Guardar profesor";
             guardarProfesor.UseVisualStyleBackColor = true;
+            guardarProfesor.Click += guardarProfesor_Click;
             // 
             // tipoContratoInput
             // 

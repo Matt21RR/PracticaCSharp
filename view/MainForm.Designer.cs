@@ -111,6 +111,7 @@
             Name = "Form1";
             ShowIcon = false;
             Text = "Actividad";
+            FormClosing += Form1_FormClosing;
             tableLayoutPanel1.ResumeLayout(false);
             tableLayoutPanel1.PerformLayout();
             ResumeLayout(false);

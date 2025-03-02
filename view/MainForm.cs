@@ -1,6 +1,5 @@
 using Actividad.src;
 using Actividad.view;
-using System.Drawing;
 
 namespace Actividad
 {
@@ -28,25 +27,25 @@ namespace Actividad
             switch (tipoFormulario)
             {
                 case "Estudiante":
-                    formulario = new EstudianteForm();
+                    formulario = new EstudianteForm(centralDatos);
                     break;
                 case "Persona":
-                    formulario = new PersonaForm();
+                    formulario = new PersonaForm(centralDatos);
                     break;
                 case "Programa":
-                    formulario = new ProgramaForm();
+                    formulario = new ProgramaForm(centralDatos);
                     break;
                 case "Facultad":
-                    formulario = new FacultadForm();
+                    formulario = new FacultadForm(centralDatos);
                     break;
                 case "Profesor":
-                    formulario = new ProfesorForm();
+                    formulario = new ProfesorForm(centralDatos);
                     break;
                 case "Curso":
                     formulario = new CursoForm(centralDatos);
                     break;
                 case "Inscripcion":
-                    formulario = new InscripcionForm();
+                    formulario = new InscripcionForm(centralDatos);
                     break;
                 case "Curso con profesor":
                     formulario = new CursoProfesorForm(centralDatos);
@@ -57,20 +56,45 @@ namespace Actividad
             }
 
             // Configurar el formulario para que se muestre dentro de la pestaña
-            formulario.BorderStyle = BorderStyle.None; // Quitar bordes del formulario
-            formulario.Dock = DockStyle.Fill; // Hacer que el formulario ocupe toda la pestaña
-
-            // Agregar el formulario a la nueva pestaña
+            formulario.BorderStyle = BorderStyle.None;
+            formulario.Dock = DockStyle.Fill;
             nuevaPestaña.Controls.Add(formulario);
-
-            // Mostrar el formulario
             formulario.Show();
-
-            // Agregar la nueva pestaña al TabControl
             tabControl1.TabPages.Add(nuevaPestaña);
-
-            // Seleccionar la nueva pestaña automáticamente
             tabControl1.SelectedTab = nuevaPestaña;
+        }
+
+        private void Form1_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            // Mostrar un MessageBox con tres opciones: Guardar, No guardar y Cancelar
+            DialogResult result = MessageBox.Show(
+                "¿Desea guardar los cambios antes de salir?", // Mensaje
+                "Confirmar cierre",                          // Título
+                MessageBoxButtons.YesNoCancel,               // Botones: Sí, No, Cancelar
+                MessageBoxIcon.Question                     // Icono de pregunta
+            );
+
+            // Manejar la respuesta del usuario
+            switch (result)
+            {
+                case DialogResult.Yes:
+                    // Guardar los cambios
+                    centralDatos.InscripcionesPersonas.actualizarInformacionGuardada();
+                    centralDatos.CursosProfesores.actualizarInformacionGuardada();
+                    centralDatos.CursosInscritos.actualizarInformacionGuardada();
+                    MessageBox.Show("Los cambios han sido guardados.", "Guardar", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    break;
+
+                case DialogResult.No:
+                    // No guardar los cambios
+                    MessageBox.Show("Los cambios no han sido guardados.", "No guardar", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    break;
+
+                case DialogResult.Cancel:
+                    // Cancelar el cierre del formulario
+                    e.Cancel = true; // Evita que el formulario se cierre
+                    break;
+            }
         }
     }
 }

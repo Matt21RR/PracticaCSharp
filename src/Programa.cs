@@ -1,18 +1,18 @@
 public class Programa
 {
-    private double _ID; 
+    private int _ID; 
     private double _duracion;
     private Facultad _facultad;
     private string _nombre;
-    private string _registro;
+    private DateTime _registro;
 
-    public double ID{ get { return _ID; } set { _ID = value; }}
+    public int ID { get { return _ID; } set { _ID = value; }}
     public double duracion { get { return _duracion;} set { _duracion = value;}}
     public Facultad facultad{ get { return _facultad;} set { _facultad = value;}}
     public string nombre { get { return _nombre;} set { _nombre = value;}}
-    public string registro { get { return _registro;} set { _registro = value;}}
+    public DateTime registro { get { return _registro;} set { _registro = value;}}
 
-    public Programa(double ID, string nombre, double duracion, string registro, Facultad facultad){
+    public Programa(int ID, string nombre, double duracion, DateTime registro, Facultad facultad){
         this._ID = ID;
         this._nombre = nombre;
         this._duracion = duracion;
@@ -21,6 +21,6 @@ public class Programa
     }
 
     public string toString(){
-        return $"-->Programa:\n\t Id:{_ID}\n\t Nombre:{_nombre}\n\t Duracion:{_duracion}\n\t Registro:{_registro}\n\t Facultad:{_facultad}";
+        return $"-->Programa:\n\t Id:{_ID}\n\t Nombre:{_nombre}\n\t Duracion:{_duracion}\n\t Registro:{_registro.ToString()}\n\t Facultad:{_facultad}";
     }
 }

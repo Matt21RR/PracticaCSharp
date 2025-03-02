@@ -104,9 +104,12 @@
             // 
             semestreInput.Dock = DockStyle.Fill;
             semestreInput.Location = new Point(577, 18);
+            semestreInput.Maximum = new decimal(new int[] { 20, 0, 0, 0 });
+            semestreInput.Minimum = new decimal(new int[] { 1, 0, 0, 0 });
             semestreInput.Name = "semestreInput";
             semestreInput.Size = new Size(282, 23);
             semestreInput.TabIndex = 18;
+            semestreInput.Value = new decimal(new int[] { 1, 0, 0, 0 });
             // 
             // label4
             // 
@@ -152,6 +155,7 @@
             guardarInscripcion.TabIndex = 5;
             guardarInscripcion.Text = "Guardar inscripción";
             guardarInscripcion.UseVisualStyleBackColor = true;
+            guardarInscripcion.Click += guardarInscripcion_Click;
             // 
             // cursoCombo
             // 

@@ -30,8 +30,8 @@ class Principal
 
         Facultad cienciasBasEIng = new Facultad(1, "Facultad de Ciencias Basicas e Ingenieria", decanoCamilo);
 
-        Programa ingSistemas = new Programa(1, "Ingenieria de Sistemas", 10, "NA", cienciasBasEIng);
-        Programa ingElectronica = new Programa(2, "Ingenieria de Electronica", 10, "NA", cienciasBasEIng);
+        Programa ingSistemas = new Programa(1, "Ingenieria de Sistemas", 10, new DateTime(2004, 12, 21), cienciasBasEIng);
+        Programa ingElectronica = new Programa(2, "Ingenieria de Electronica", 10, new DateTime(2004, 12, 21), cienciasBasEIng);
 
         Estudiante estudianteJuan = new Estudiante(2, "Juan", "Perez", "juanp@unillanos.edu.co", 16001, ingSistemas, true, 4.5f);
         Estudiante estudiantePedro = new Estudiante(3, "Pedro", "Gomez", "pedrog@unillanos.edu.co", 16002, ingSistemas, true, 4.0f);

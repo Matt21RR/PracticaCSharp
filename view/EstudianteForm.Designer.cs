@@ -39,11 +39,11 @@
             correoElectronicoInput = new TextBox();
             guardarEstudiante = new Button();
             label7 = new Label();
-            comboBox1 = new ComboBox();
+            programaCombo = new ComboBox();
             activoCheckBox = new CheckBox();
-            numericUpDown1 = new NumericUpDown();
+            promedioInput = new NumericUpDown();
             tableLayoutPanel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)numericUpDown1).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)promedioInput).BeginInit();
             SuspendLayout();
             // 
             // label1
@@ -74,9 +74,9 @@
             tableLayoutPanel1.Controls.Add(correoElectronicoInput, 2, 1);
             tableLayoutPanel1.Controls.Add(guardarEstudiante, 2, 6);
             tableLayoutPanel1.Controls.Add(label7, 1, 3);
-            tableLayoutPanel1.Controls.Add(comboBox1, 0, 4);
+            tableLayoutPanel1.Controls.Add(programaCombo, 0, 4);
             tableLayoutPanel1.Controls.Add(activoCheckBox, 2, 2);
-            tableLayoutPanel1.Controls.Add(numericUpDown1, 1, 4);
+            tableLayoutPanel1.Controls.Add(promedioInput, 1, 4);
             tableLayoutPanel1.Dock = DockStyle.Top;
             tableLayoutPanel1.Location = new Point(0, 37);
             tableLayoutPanel1.MinimumSize = new Size(600, 150);
@@ -172,6 +172,7 @@
             guardarEstudiante.TabIndex = 5;
             guardarEstudiante.Text = "Guardar estudiante";
             guardarEstudiante.UseVisualStyleBackColor = true;
+            guardarEstudiante.Click += guardarEstudiante_Click;
             // 
             // label7
             // 
@@ -185,14 +186,14 @@
             label7.Text = "Promedio";
             label7.TextAlign = ContentAlignment.MiddleLeft;
             // 
-            // comboBox1
+            // programaCombo
             // 
-            comboBox1.Dock = DockStyle.Fill;
-            comboBox1.FormattingEnabled = true;
-            comboBox1.Location = new Point(3, 77);
-            comboBox1.Name = "comboBox1";
-            comboBox1.Size = new Size(312, 23);
-            comboBox1.TabIndex = 9;
+            programaCombo.Dock = DockStyle.Fill;
+            programaCombo.FormattingEnabled = true;
+            programaCombo.Location = new Point(3, 77);
+            programaCombo.Name = "programaCombo";
+            programaCombo.Size = new Size(312, 23);
+            programaCombo.TabIndex = 9;
             // 
             // activoCheckBox
             // 
@@ -206,16 +207,16 @@
             activoCheckBox.Text = "Esta activo";
             activoCheckBox.UseVisualStyleBackColor = true;
             // 
-            // numericUpDown1
+            // promedioInput
             // 
-            numericUpDown1.DecimalPlaces = 2;
-            numericUpDown1.Dock = DockStyle.Fill;
-            numericUpDown1.Increment = new decimal(new int[] { 1, 0, 0, 65536 });
-            numericUpDown1.Location = new Point(321, 77);
-            numericUpDown1.Maximum = new decimal(new int[] { 5, 0, 0, 0 });
-            numericUpDown1.Name = "numericUpDown1";
-            numericUpDown1.Size = new Size(312, 23);
-            numericUpDown1.TabIndex = 11;
+            promedioInput.DecimalPlaces = 2;
+            promedioInput.Dock = DockStyle.Fill;
+            promedioInput.Increment = new decimal(new int[] { 1, 0, 0, 65536 });
+            promedioInput.Location = new Point(321, 77);
+            promedioInput.Maximum = new decimal(new int[] { 5, 0, 0, 0 });
+            promedioInput.Name = "promedioInput";
+            promedioInput.Size = new Size(312, 23);
+            promedioInput.TabIndex = 11;
             // 
             // EstudianteForm
             // 
@@ -229,7 +230,7 @@
             Size = new Size(955, 498);
             tableLayoutPanel1.ResumeLayout(false);
             tableLayoutPanel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)numericUpDown1).EndInit();
+            ((System.ComponentModel.ISupportInitialize)promedioInput).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -249,8 +250,8 @@
         private Label label6;
         private Label label7;
         private CheckBox checkBox1;
-        private ComboBox comboBox1;
+        private ComboBox programaCombo;
         private CheckBox activoCheckBox;
-        private NumericUpDown numericUpDown1;
+        private NumericUpDown promedioInput;
     }
 }

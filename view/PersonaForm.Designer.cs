@@ -133,6 +133,7 @@
             guardarPersona.TabIndex = 5;
             guardarPersona.Text = "Guardar persona";
             guardarPersona.UseVisualStyleBackColor = true;
+            guardarPersona.Click += guardarPersona_Click;
             // 
             // label1
             // 

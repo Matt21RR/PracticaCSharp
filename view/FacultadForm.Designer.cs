@@ -103,6 +103,7 @@
             guardarFacultad.TabIndex = 5;
             guardarFacultad.Text = "Guardar facultad";
             guardarFacultad.UseVisualStyleBackColor = true;
+            guardarFacultad.Click += guardarFacultad_Click;
             // 
             // decanoCombo
             // 

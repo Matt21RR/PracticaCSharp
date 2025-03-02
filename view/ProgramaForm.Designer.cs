@@ -34,7 +34,7 @@
             nombreInput = new TextBox();
             label3 = new Label();
             label4 = new Label();
-            crearPersona = new Button();
+            crearPrograma = new Button();
             registroDate = new DateTimePicker();
             duracionInput = new NumericUpDown();
             facultadCombo = new ComboBox();
@@ -56,7 +56,7 @@
             tableLayoutPanel1.Controls.Add(nombreInput, 0, 1);
             tableLayoutPanel1.Controls.Add(label3, 1, 0);
             tableLayoutPanel1.Controls.Add(label4, 2, 0);
-            tableLayoutPanel1.Controls.Add(crearPersona, 2, 4);
+            tableLayoutPanel1.Controls.Add(crearPrograma, 2, 4);
             tableLayoutPanel1.Controls.Add(registroDate, 2, 1);
             tableLayoutPanel1.Controls.Add(duracionInput, 1, 1);
             tableLayoutPanel1.Controls.Add(facultadCombo, 0, 3);
@@ -126,16 +126,17 @@
             label4.Text = "Registro";
             label4.TextAlign = ContentAlignment.MiddleLeft;
             // 
-            // crearPersona
+            // crearPrograma
             // 
-            crearPersona.Dock = DockStyle.Fill;
-            crearPersona.Location = new Point(537, 123);
-            crearPersona.Margin = new Padding(3, 20, 3, 3);
-            crearPersona.Name = "crearPersona";
-            crearPersona.Size = new Size(262, 41);
-            crearPersona.TabIndex = 5;
-            crearPersona.Text = "Crear";
-            crearPersona.UseVisualStyleBackColor = true;
+            crearPrograma.Dock = DockStyle.Fill;
+            crearPrograma.Location = new Point(537, 123);
+            crearPrograma.Margin = new Padding(3, 20, 3, 3);
+            crearPrograma.Name = "crearPrograma";
+            crearPrograma.Size = new Size(262, 41);
+            crearPrograma.TabIndex = 5;
+            crearPrograma.Text = "Crear programa";
+            crearPrograma.UseVisualStyleBackColor = true;
+            crearPrograma.Click += crearPrograma_Click;
             // 
             // registroDate
             // 
@@ -194,7 +195,7 @@
         private Label label2;
         private Label label3;
         private Label label4;
-        private Button crearPersona;
+        private Button crearPrograma;
         private TextBox tipoContratoInput;
         private Label label7;
         private Label label1;
