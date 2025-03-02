@@ -28,25 +28,25 @@ namespace Actividad
             switch (tipoFormulario)
             {
                 case "Estudiante":
-                    formulario = new EstudianteForm(centralDatos);
+                    formulario = new EstudianteForm();
                     break;
                 case "Persona":
-                    formulario = new PersonaForm(centralDatos);
+                    formulario = new PersonaForm();
                     break;
                 case "Programa":
-                    formulario = new ProgramaForm(centralDatos);
+                    formulario = new ProgramaForm();
                     break;
                 case "Facultad":
-                    formulario = new FacultadForm(centralDatos);
+                    formulario = new FacultadForm();
                     break;
                 case "Profesor":
-                    formulario = new ProfesorForm(centralDatos);
+                    formulario = new ProfesorForm();
                     break;
                 case "Curso":
                     formulario = new CursoForm(centralDatos);
                     break;
                 case "Inscripcion":
-                    formulario = new InscripcionForm(centralDatos);
+                    formulario = new InscripcionForm();
                     break;
                 case "Curso con profesor":
                     formulario = new CursoProfesorForm(centralDatos);
