@@ -15,9 +15,9 @@ namespace Actividad
 
         private void button1_Click(object sender, EventArgs e)
         {
-            // Crear una nueva pestaña
-            TabPage nuevaPestaña = new TabPage();
-            nuevaPestaña.Text = "Pestaña " + (tabControl1.TabCount + 1);
+            // Crear una nueva pestaï¿½a
+            TabPage nuevaPestana = new TabPage();
+            nuevaPestana.Text = "PestaÃ±a " + (tabControl1.TabCount + 1);
 
             // Obtener el tipo de formulario seleccionado en el ComboBox
             string tipoFormulario = nuevaClaseCombo.SelectedItem.ToString();
@@ -51,26 +51,26 @@ namespace Actividad
                     formulario = new CursoProfesorForm(centralDatos);
                     break;
                 default:
-                    MessageBox.Show("Selecciona un tipo válido.");
+                    MessageBox.Show("Selecciona un tipo vï¿½lido.");
                     return;
             }
 
-            // Configurar el formulario para que se muestre dentro de la pestaña
+            // Configurar el formulario para que se muestre dentro de la pestaï¿½a
             formulario.BorderStyle = BorderStyle.None;
             formulario.Dock = DockStyle.Fill;
-            nuevaPestaña.Controls.Add(formulario);
+            nuevaPestana.Controls.Add(formulario);
             formulario.Show();
-            tabControl1.TabPages.Add(nuevaPestaña);
-            tabControl1.SelectedTab = nuevaPestaña;
+            tabControl1.TabPages.Add(nuevaPestana);
+            tabControl1.SelectedTab = nuevaPestana;
         }
 
         private void Form1_FormClosing(object sender, FormClosingEventArgs e)
         {
             // Mostrar un MessageBox con tres opciones: Guardar, No guardar y Cancelar
             DialogResult result = MessageBox.Show(
-                "¿Desea guardar los cambios antes de salir?", // Mensaje
-                "Confirmar cierre",                          // Título
-                MessageBoxButtons.YesNoCancel,               // Botones: Sí, No, Cancelar
+                "Â¿Desea guardar los cambios antes de salir?", // Mensaje
+                "Confirmar cierre",                          // Tï¿½tulo
+                MessageBoxButtons.YesNoCancel,               // Botones: Sï¿½, No, Cancelar
                 MessageBoxIcon.Question                     // Icono de pregunta
             );
 
