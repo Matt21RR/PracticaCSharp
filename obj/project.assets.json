@@ -8,31 +8,24 @@
     "net9.0-windows7.0": []
   },
   "packageFolders": {
-    "C:\\Users\\VILL\\.nuget\\packages\\": {},
-    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
+    "C:\\Users\\porta\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\VILL\\Documents\\PracticaCSharp\\Actividad.csproj",
+      "projectUniqueName": "C:\\Users\\porta\\Documents\\GitHub\\PracticaCSharp\\Actividad.csproj",
       "projectName": "Actividad",
-      "projectPath": "C:\\Users\\VILL\\Documents\\PracticaCSharp\\Actividad.csproj",
-      "packagesPath": "C:\\Users\\VILL\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\VILL\\Documents\\PracticaCSharp\\obj\\",
+      "projectPath": "C:\\Users\\porta\\Documents\\GitHub\\PracticaCSharp\\Actividad.csproj",
+      "packagesPath": "C:\\Users\\porta\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\porta\\Documents\\GitHub\\PracticaCSharp\\obj\\",
       "projectStyle": "PackageReference",
-      "fallbackFolders": [
-        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
-      ],
       "configFilePaths": [
-        "C:\\Users\\VILL\\AppData\\Roaming\\NuGet\\NuGet.Config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        "C:\\Users\\porta\\AppData\\Roaming\\NuGet\\NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "net9.0-windows"
       ],
       "sources": {
-        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
