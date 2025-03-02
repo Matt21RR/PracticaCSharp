@@ -21,3 +21,6 @@ C:\Users\VILL\Documents\PracticaCSharp\obj\Debug\net9.0-windows\Actividad.view.F
 C:\Users\VILL\Documents\PracticaCSharp\obj\Debug\net9.0-windows\Actividad.view.PersonaForm.resources
 C:\Users\VILL\Documents\PracticaCSharp\obj\Debug\net9.0-windows\Actividad.view.ProfesorForm.resources
 C:\Users\VILL\Documents\PracticaCSharp\obj\Debug\net9.0-windows\Actividad.view.ProgramaForm.resources
+C:\Users\VILL\Documents\PracticaCSharp\obj\Debug\net9.0-windows\Actividad.view.CursoForm.resources
+C:\Users\VILL\Documents\PracticaCSharp\obj\Debug\net9.0-windows\Actividad.view.InscripcionForm.resources
+C:\Users\VILL\Documents\PracticaCSharp\obj\Debug\net9.0-windows\Actividad.view.CursoProfesorForm.resources

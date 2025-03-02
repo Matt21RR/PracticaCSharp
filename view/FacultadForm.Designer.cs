@@ -32,7 +32,7 @@
             label2 = new Label();
             nombreInput = new TextBox();
             label3 = new Label();
-            crearPersona = new Button();
+            guardarFacultad = new Button();
             decanoCombo = new ComboBox();
             label1 = new Label();
             tableLayoutPanel1.SuspendLayout();
@@ -49,21 +49,17 @@
             tableLayoutPanel1.Controls.Add(label2, 0, 0);
             tableLayoutPanel1.Controls.Add(nombreInput, 0, 1);
             tableLayoutPanel1.Controls.Add(label3, 1, 0);
-            tableLayoutPanel1.Controls.Add(crearPersona, 2, 2);
+            tableLayoutPanel1.Controls.Add(guardarFacultad, 2, 2);
             tableLayoutPanel1.Controls.Add(decanoCombo, 1, 1);
             tableLayoutPanel1.Dock = DockStyle.Top;
             tableLayoutPanel1.Location = new Point(0, 37);
             tableLayoutPanel1.MinimumSize = new Size(600, 150);
             tableLayoutPanel1.Name = "tableLayoutPanel1";
             tableLayoutPanel1.RowCount = 3;
-            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 33.33333F));
-            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 33.3333359F));
-            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 33.3333359F));
-            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Absolute, 20F));
-            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Absolute, 20F));
-            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Absolute, 20F));
-            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Absolute, 20F));
-            tableLayoutPanel1.Size = new Size(894, 159);
+            tableLayoutPanel1.RowStyles.Add(new RowStyle());
+            tableLayoutPanel1.RowStyles.Add(new RowStyle());
+            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Absolute, 50F));
+            tableLayoutPanel1.Size = new Size(894, 150);
             tableLayoutPanel1.TabIndex = 7;
             // 
             // label2
@@ -72,7 +68,7 @@
             label2.Dock = DockStyle.Fill;
             label2.Location = new Point(3, 0);
             label2.Name = "label2";
-            label2.Size = new Size(291, 52);
+            label2.Size = new Size(291, 15);
             label2.TabIndex = 4;
             label2.Text = "Nombre";
             label2.TextAlign = ContentAlignment.MiddleLeft;
@@ -80,7 +76,7 @@
             // nombreInput
             // 
             nombreInput.Dock = DockStyle.Fill;
-            nombreInput.Location = new Point(3, 55);
+            nombreInput.Location = new Point(3, 18);
             nombreInput.Name = "nombreInput";
             nombreInput.Size = new Size(291, 23);
             nombreInput.TabIndex = 0;
@@ -91,26 +87,28 @@
             label3.Dock = DockStyle.Fill;
             label3.Location = new Point(300, 0);
             label3.Name = "label3";
-            label3.Size = new Size(292, 52);
+            label3.Size = new Size(292, 15);
             label3.TabIndex = 4;
             label3.Text = "Decano";
             label3.TextAlign = ContentAlignment.MiddleLeft;
             // 
-            // crearPersona
+            // guardarFacultad
             // 
-            crearPersona.Dock = DockStyle.Fill;
-            crearPersona.Location = new Point(598, 108);
-            crearPersona.Name = "crearPersona";
-            crearPersona.Size = new Size(293, 48);
-            crearPersona.TabIndex = 5;
-            crearPersona.Text = "Crear";
-            crearPersona.UseVisualStyleBackColor = true;
+            guardarFacultad.Dock = DockStyle.Top;
+            guardarFacultad.Location = new Point(598, 54);
+            guardarFacultad.Margin = new Padding(3, 10, 3, 3);
+            guardarFacultad.MaximumSize = new Size(0, 50);
+            guardarFacultad.Name = "guardarFacultad";
+            guardarFacultad.Size = new Size(293, 50);
+            guardarFacultad.TabIndex = 5;
+            guardarFacultad.Text = "Guardar facultad";
+            guardarFacultad.UseVisualStyleBackColor = true;
             // 
             // decanoCombo
             // 
             decanoCombo.Dock = DockStyle.Fill;
             decanoCombo.FormattingEnabled = true;
-            decanoCombo.Location = new Point(300, 55);
+            decanoCombo.Location = new Point(300, 18);
             decanoCombo.Name = "decanoCombo";
             decanoCombo.Size = new Size(292, 23);
             decanoCombo.TabIndex = 6;
@@ -146,7 +144,7 @@
         private Label label2;
         private TextBox nombreInput;
         private Label label3;
-        private Button crearPersona;
+        private Button guardarFacultad;
         private ComboBox decanoCombo;
         private Label label1;
     }

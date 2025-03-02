@@ -29,20 +29,18 @@
         private void InitializeComponent()
         {
             tableLayoutPanel1 = new TableLayoutPanel();
+            label5 = new Label();
             label2 = new Label();
             nombreInput = new TextBox();
             label3 = new Label();
             label4 = new Label();
             crearPersona = new Button();
-            tipoContratoInput = new TextBox();
-            label7 = new Label();
-            dateTimePicker1 = new DateTimePicker();
+            registroDate = new DateTimePicker();
+            duracionInput = new NumericUpDown();
+            facultadCombo = new ComboBox();
             label1 = new Label();
-            numericUpDown1 = new NumericUpDown();
-            comboBox1 = new ComboBox();
-            label5 = new Label();
             tableLayoutPanel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)numericUpDown1).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)duracionInput).BeginInit();
             SuspendLayout();
             // 
             // tableLayoutPanel1
@@ -53,23 +51,20 @@
             tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 33.33333F));
             tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 33.33334F));
             tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 33.33333F));
-            tableLayoutPanel1.Controls.Add(label5, 0, 3);
+            tableLayoutPanel1.Controls.Add(label5, 0, 2);
             tableLayoutPanel1.Controls.Add(label2, 0, 0);
             tableLayoutPanel1.Controls.Add(nombreInput, 0, 1);
             tableLayoutPanel1.Controls.Add(label3, 1, 0);
             tableLayoutPanel1.Controls.Add(label4, 2, 0);
-            tableLayoutPanel1.Controls.Add(crearPersona, 2, 5);
-            tableLayoutPanel1.Controls.Add(tipoContratoInput, 0, 4);
-            tableLayoutPanel1.Controls.Add(label7, 0, 3);
-            tableLayoutPanel1.Controls.Add(dateTimePicker1, 2, 1);
-            tableLayoutPanel1.Controls.Add(numericUpDown1, 1, 1);
-            tableLayoutPanel1.Controls.Add(comboBox1, 1, 4);
+            tableLayoutPanel1.Controls.Add(crearPersona, 2, 4);
+            tableLayoutPanel1.Controls.Add(registroDate, 2, 1);
+            tableLayoutPanel1.Controls.Add(duracionInput, 1, 1);
+            tableLayoutPanel1.Controls.Add(facultadCombo, 0, 3);
             tableLayoutPanel1.Dock = DockStyle.Top;
             tableLayoutPanel1.Location = new Point(0, 37);
             tableLayoutPanel1.MinimumSize = new Size(600, 150);
             tableLayoutPanel1.Name = "tableLayoutPanel1";
-            tableLayoutPanel1.RowCount = 6;
-            tableLayoutPanel1.RowStyles.Add(new RowStyle());
+            tableLayoutPanel1.RowCount = 5;
             tableLayoutPanel1.RowStyles.Add(new RowStyle());
             tableLayoutPanel1.RowStyles.Add(new RowStyle());
             tableLayoutPanel1.RowStyles.Add(new RowStyle());
@@ -77,6 +72,18 @@
             tableLayoutPanel1.RowStyles.Add(new RowStyle());
             tableLayoutPanel1.Size = new Size(802, 167);
             tableLayoutPanel1.TabIndex = 7;
+            // 
+            // label5
+            // 
+            label5.AutoSize = true;
+            label5.Dock = DockStyle.Fill;
+            label5.Location = new Point(3, 59);
+            label5.Margin = new Padding(3, 15, 3, 0);
+            label5.Name = "label5";
+            label5.Size = new Size(261, 15);
+            label5.TabIndex = 14;
+            label5.Text = "Facultad";
+            label5.TextAlign = ContentAlignment.MiddleLeft;
             // 
             // label2
             // 
@@ -130,33 +137,30 @@
             crearPersona.Text = "Crear";
             crearPersona.UseVisualStyleBackColor = true;
             // 
-            // tipoContratoInput
+            // registroDate
             // 
-            tipoContratoInput.Dock = DockStyle.Fill;
-            tipoContratoInput.Location = new Point(3, 77);
-            tipoContratoInput.Name = "tipoContratoInput";
-            tipoContratoInput.Size = new Size(261, 23);
-            tipoContratoInput.TabIndex = 8;
+            registroDate.Dock = DockStyle.Fill;
+            registroDate.Location = new Point(537, 18);
+            registroDate.Name = "registroDate";
+            registroDate.Size = new Size(262, 23);
+            registroDate.TabIndex = 9;
             // 
-            // label7
+            // duracionInput
             // 
-            label7.AutoSize = true;
-            label7.Dock = DockStyle.Fill;
-            label7.Location = new Point(3, 59);
-            label7.Margin = new Padding(3, 15, 3, 0);
-            label7.Name = "label7";
-            label7.Size = new Size(261, 15);
-            label7.TabIndex = 5;
-            label7.Text = "Tipo de Contrato";
-            label7.TextAlign = ContentAlignment.MiddleLeft;
+            duracionInput.Location = new Point(270, 18);
+            duracionInput.Maximum = new decimal(new int[] { 20, 0, 0, 0 });
+            duracionInput.Name = "duracionInput";
+            duracionInput.Size = new Size(261, 23);
+            duracionInput.TabIndex = 12;
             // 
-            // dateTimePicker1
+            // facultadCombo
             // 
-            dateTimePicker1.Dock = DockStyle.Fill;
-            dateTimePicker1.Location = new Point(537, 18);
-            dateTimePicker1.Name = "dateTimePicker1";
-            dateTimePicker1.Size = new Size(262, 23);
-            dateTimePicker1.TabIndex = 9;
+            facultadCombo.Dock = DockStyle.Fill;
+            facultadCombo.FormattingEnabled = true;
+            facultadCombo.Location = new Point(3, 77);
+            facultadCombo.Name = "facultadCombo";
+            facultadCombo.Size = new Size(261, 23);
+            facultadCombo.TabIndex = 13;
             // 
             // label1
             // 
@@ -169,37 +173,6 @@
             label1.TabIndex = 6;
             label1.Text = "Programa";
             // 
-            // numericUpDown1
-            // 
-            numericUpDown1.DecimalPlaces = 2;
-            numericUpDown1.Increment = new decimal(new int[] { 1, 0, 0, 65536 });
-            numericUpDown1.Location = new Point(270, 18);
-            numericUpDown1.Maximum = new decimal(new int[] { 5, 0, 0, 0 });
-            numericUpDown1.Name = "numericUpDown1";
-            numericUpDown1.Size = new Size(261, 23);
-            numericUpDown1.TabIndex = 12;
-            // 
-            // comboBox1
-            // 
-            comboBox1.Dock = DockStyle.Fill;
-            comboBox1.FormattingEnabled = true;
-            comboBox1.Location = new Point(270, 77);
-            comboBox1.Name = "comboBox1";
-            comboBox1.Size = new Size(261, 23);
-            comboBox1.TabIndex = 13;
-            // 
-            // label5
-            // 
-            label5.AutoSize = true;
-            label5.Dock = DockStyle.Fill;
-            label5.Location = new Point(270, 59);
-            label5.Margin = new Padding(3, 15, 3, 0);
-            label5.Name = "label5";
-            label5.Size = new Size(261, 15);
-            label5.TabIndex = 14;
-            label5.Text = "Facultad";
-            label5.TextAlign = ContentAlignment.MiddleLeft;
-            // 
             // ProgramaForm
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -210,7 +183,7 @@
             Size = new Size(802, 397);
             tableLayoutPanel1.ResumeLayout(false);
             tableLayoutPanel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)numericUpDown1).EndInit();
+            ((System.ComponentModel.ISupportInitialize)duracionInput).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -219,7 +192,6 @@
 
         private TableLayoutPanel tableLayoutPanel1;
         private Label label2;
-        private TextBox nombreInput;
         private Label label3;
         private Label label4;
         private Button crearPersona;
@@ -228,7 +200,9 @@
         private Label label1;
         private DateTimePicker dateTimePicker1;
         private Label label5;
-        private NumericUpDown numericUpDown1;
-        private ComboBox comboBox1;
+        private ComboBox facultadCombo;
+        private TextBox nombreInput;
+        private DateTimePicker registroDate;
+        private NumericUpDown duracionInput;
     }
 }

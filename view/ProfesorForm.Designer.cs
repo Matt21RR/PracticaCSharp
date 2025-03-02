@@ -35,7 +35,7 @@
             label3 = new Label();
             label4 = new Label();
             correoElectronicoInput = new TextBox();
-            crearPersona = new Button();
+            guardarProfesor = new Button();
             tipoContratoInput = new TextBox();
             label7 = new Label();
             label1 = new Label();
@@ -56,7 +56,7 @@
             tableLayoutPanel1.Controls.Add(label3, 1, 0);
             tableLayoutPanel1.Controls.Add(label4, 2, 0);
             tableLayoutPanel1.Controls.Add(correoElectronicoInput, 2, 1);
-            tableLayoutPanel1.Controls.Add(crearPersona, 2, 5);
+            tableLayoutPanel1.Controls.Add(guardarProfesor, 2, 5);
             tableLayoutPanel1.Controls.Add(tipoContratoInput, 0, 4);
             tableLayoutPanel1.Controls.Add(label7, 0, 3);
             tableLayoutPanel1.Dock = DockStyle.Top;
@@ -130,15 +130,15 @@
             correoElectronicoInput.Size = new Size(287, 23);
             correoElectronicoInput.TabIndex = 1;
             // 
-            // crearPersona
+            // guardarProfesor
             // 
-            crearPersona.Dock = DockStyle.Fill;
-            crearPersona.Location = new Point(585, 106);
-            crearPersona.Name = "crearPersona";
-            crearPersona.Size = new Size(287, 41);
-            crearPersona.TabIndex = 5;
-            crearPersona.Text = "Crear";
-            crearPersona.UseVisualStyleBackColor = true;
+            guardarProfesor.Dock = DockStyle.Fill;
+            guardarProfesor.Location = new Point(585, 106);
+            guardarProfesor.Name = "guardarProfesor";
+            guardarProfesor.Size = new Size(287, 41);
+            guardarProfesor.TabIndex = 5;
+            guardarProfesor.Text = "Guardar profesor";
+            guardarProfesor.UseVisualStyleBackColor = true;
             // 
             // tipoContratoInput
             // 
@@ -194,7 +194,7 @@
         private Label label3;
         private Label label4;
         private TextBox correoElectronicoInput;
-        private Button crearPersona;
+        private Button guardarProfesor;
         private TextBox tipoContratoInput;
         private Label label7;
         private Label label1;

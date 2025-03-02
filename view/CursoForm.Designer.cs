@@ -1,6 +1,6 @@
 ﻿namespace Actividad.view
 {
-    partial class PersonaForm
+    partial class CursoForm
     {
         /// <summary> 
         /// Required designer variable.
@@ -28,16 +28,18 @@
         /// </summary>
         private void InitializeComponent()
         {
+            components = new System.ComponentModel.Container();
             tableLayoutPanel1 = new TableLayoutPanel();
             label2 = new Label();
-            apellidoInput = new TextBox();
             nombreInput = new TextBox();
             label3 = new Label();
-            label4 = new Label();
-            correoElectronicoInput = new TextBox();
-            guardarPersona = new Button();
+            guardarCurso = new Button();
+            programaCombo = new ComboBox();
+            programaBindingSource = new BindingSource(components);
+            activoCheckBox = new CheckBox();
             label1 = new Label();
             tableLayoutPanel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)programaBindingSource).BeginInit();
             SuspendLayout();
             // 
             // tableLayoutPanel1
@@ -46,15 +48,14 @@
             tableLayoutPanel1.AutoSizeMode = AutoSizeMode.GrowAndShrink;
             tableLayoutPanel1.ColumnCount = 3;
             tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 33.33333F));
-            tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 33.33334F));
-            tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 33.33333F));
+            tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 33.3333359F));
+            tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 33.3333359F));
             tableLayoutPanel1.Controls.Add(label2, 0, 0);
-            tableLayoutPanel1.Controls.Add(apellidoInput, 1, 1);
             tableLayoutPanel1.Controls.Add(nombreInput, 0, 1);
             tableLayoutPanel1.Controls.Add(label3, 1, 0);
-            tableLayoutPanel1.Controls.Add(label4, 2, 0);
-            tableLayoutPanel1.Controls.Add(correoElectronicoInput, 2, 1);
-            tableLayoutPanel1.Controls.Add(guardarPersona, 2, 2);
+            tableLayoutPanel1.Controls.Add(guardarCurso, 2, 2);
+            tableLayoutPanel1.Controls.Add(programaCombo, 1, 1);
+            tableLayoutPanel1.Controls.Add(activoCheckBox, 2, 0);
             tableLayoutPanel1.Dock = DockStyle.Top;
             tableLayoutPanel1.Location = new Point(0, 37);
             tableLayoutPanel1.MinimumSize = new Size(600, 150);
@@ -63,8 +64,8 @@
             tableLayoutPanel1.RowStyles.Add(new RowStyle());
             tableLayoutPanel1.RowStyles.Add(new RowStyle());
             tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Absolute, 50F));
-            tableLayoutPanel1.Size = new Size(970, 150);
-            tableLayoutPanel1.TabIndex = 5;
+            tableLayoutPanel1.Size = new Size(913, 150);
+            tableLayoutPanel1.TabIndex = 9;
             // 
             // label2
             // 
@@ -72,67 +73,68 @@
             label2.Dock = DockStyle.Fill;
             label2.Location = new Point(3, 0);
             label2.Name = "label2";
-            label2.Size = new Size(317, 15);
+            label2.Size = new Size(298, 15);
             label2.TabIndex = 4;
             label2.Text = "Nombre";
             label2.TextAlign = ContentAlignment.MiddleLeft;
-            // 
-            // apellidoInput
-            // 
-            apellidoInput.Dock = DockStyle.Fill;
-            apellidoInput.Location = new Point(326, 18);
-            apellidoInput.Name = "apellidoInput";
-            apellidoInput.Size = new Size(317, 23);
-            apellidoInput.TabIndex = 1;
             // 
             // nombreInput
             // 
             nombreInput.Dock = DockStyle.Fill;
             nombreInput.Location = new Point(3, 18);
             nombreInput.Name = "nombreInput";
-            nombreInput.Size = new Size(317, 23);
+            nombreInput.Size = new Size(298, 23);
             nombreInput.TabIndex = 0;
             // 
             // label3
             // 
             label3.AutoSize = true;
             label3.Dock = DockStyle.Fill;
-            label3.Location = new Point(326, 0);
+            label3.Location = new Point(307, 0);
             label3.Name = "label3";
-            label3.Size = new Size(317, 15);
+            label3.Size = new Size(298, 15);
             label3.TabIndex = 4;
-            label3.Text = "Apellido";
+            label3.Text = "Programa";
             label3.TextAlign = ContentAlignment.MiddleLeft;
             // 
-            // label4
+            // guardarCurso
             // 
-            label4.AutoSize = true;
-            label4.Dock = DockStyle.Fill;
-            label4.Location = new Point(649, 0);
-            label4.Name = "label4";
-            label4.Size = new Size(318, 15);
-            label4.TabIndex = 4;
-            label4.Text = "Correo Electronico";
-            label4.TextAlign = ContentAlignment.MiddleLeft;
+            guardarCurso.Dock = DockStyle.Top;
+            guardarCurso.Location = new Point(611, 64);
+            guardarCurso.Margin = new Padding(3, 20, 3, 3);
+            guardarCurso.MaximumSize = new Size(0, 50);
+            guardarCurso.Name = "guardarCurso";
+            guardarCurso.Size = new Size(299, 40);
+            guardarCurso.TabIndex = 5;
+            guardarCurso.Text = "Guardar curso";
+            guardarCurso.UseVisualStyleBackColor = true;
+            guardarCurso.Click += guardarCurso_Click;
             // 
-            // correoElectronicoInput
+            // programaCombo
             // 
-            correoElectronicoInput.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
-            correoElectronicoInput.Location = new Point(649, 18);
-            correoElectronicoInput.Name = "correoElectronicoInput";
-            correoElectronicoInput.Size = new Size(318, 23);
-            correoElectronicoInput.TabIndex = 1;
+            programaCombo.DataSource = programaBindingSource;
+            programaCombo.Dock = DockStyle.Fill;
+            programaCombo.FormattingEnabled = true;
+            programaCombo.Location = new Point(307, 18);
+            programaCombo.Name = "programaCombo";
+            programaCombo.Size = new Size(298, 23);
+            programaCombo.TabIndex = 13;
             // 
-            // guardarPersona
+            // programaBindingSource
             // 
-            guardarPersona.Dock = DockStyle.Top;
-            guardarPersona.Location = new Point(649, 54);
-            guardarPersona.Margin = new Padding(3, 10, 3, 3);
-            guardarPersona.Name = "guardarPersona";
-            guardarPersona.Size = new Size(318, 50);
-            guardarPersona.TabIndex = 5;
-            guardarPersona.Text = "Guardar persona";
-            guardarPersona.UseVisualStyleBackColor = true;
+            programaBindingSource.DataSource = typeof(Programa);
+            // 
+            // activoCheckBox
+            // 
+            activoCheckBox.AutoSize = true;
+            activoCheckBox.Dock = DockStyle.Fill;
+            activoCheckBox.Location = new Point(611, 3);
+            activoCheckBox.Name = "activoCheckBox";
+            tableLayoutPanel1.SetRowSpan(activoCheckBox, 2);
+            activoCheckBox.Size = new Size(299, 38);
+            activoCheckBox.TabIndex = 14;
+            activoCheckBox.Text = "Esta activo";
+            activoCheckBox.UseVisualStyleBackColor = true;
             // 
             // label1
             // 
@@ -141,20 +143,21 @@
             label1.Font = new Font("Segoe UI", 20F, FontStyle.Bold);
             label1.Location = new Point(0, 0);
             label1.Name = "label1";
-            label1.Size = new Size(119, 37);
-            label1.TabIndex = 4;
-            label1.Text = "Persona";
+            label1.Size = new Size(90, 37);
+            label1.TabIndex = 8;
+            label1.Text = "Curso";
             // 
-            // PersonaForm
+            // CursoForm
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             Controls.Add(tableLayoutPanel1);
             Controls.Add(label1);
-            Name = "PersonaForm";
-            Size = new Size(970, 645);
+            Name = "CursoForm";
+            Size = new Size(913, 444);
             tableLayoutPanel1.ResumeLayout(false);
             tableLayoutPanel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)programaBindingSource).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -162,13 +165,16 @@
         #endregion
 
         private TableLayoutPanel tableLayoutPanel1;
+        private Label label5;
         private Label label2;
-        private TextBox apellidoInput;
         private TextBox nombreInput;
         private Label label3;
         private Label label4;
-        private TextBox correoElectronicoInput;
-        private Button guardarPersona;
+        private DateTimePicker registroDate;
+        private ComboBox programaCombo;
+        private BindingSource programaBindingSource;
         private Label label1;
+        private CheckBox activoCheckBox;
+        private Button guardarCurso;
     }
 }

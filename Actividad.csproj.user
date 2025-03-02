@@ -1,7 +1,16 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="Current" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
+    <Compile Update="view\CursoForm.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Update="view\CursoProfesorForm.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
     <Compile Update="view\FacultadForm.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Update="view\InscripcionForm.cs">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Update="view\MainForm.cs">
