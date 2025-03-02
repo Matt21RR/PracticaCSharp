@@ -1,8 +1,8 @@
 # See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
 
 # dotnet compile data
-bin
-obj
+/bin
+/obj
 /.vs
 
 # Directorio para los archivos planos con la informacion que almacena el programa
