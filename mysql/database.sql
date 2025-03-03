@@ -17,6 +17,8 @@ create table Facultad (
     nombre varchar(255) not null,
     decano_ID bigint not null,
     foreign key (decano_ID) references Persona(ID)
+        on update cascade
+        on delete cascade
 );
 
 -- Crear la tabla Programa
@@ -28,6 +30,8 @@ create table Programa (
     registro DATE not null,
     facultad_ID bigint not null,
     foreign key (facultad_ID) references Facultad(ID)
+        on update cascade
+        on delete cascade
 );
 
 -- Crear la tabla Estudiante
@@ -38,8 +42,12 @@ create table Estudiante (
     activo boolean not null,
     promedio bigint not null,
     ID bigint not null,
-    foreign key (ID) references Persona(ID),
-    foreign key (programa_ID) references Programa(ID)
+    foreign key (ID) references Persona(ID) 
+        on update cascade
+        on delete cascade,
+    foreign key (programa_ID) references Programa(ID) 
+        on update cascade
+        on delete cascade
 );
 
 -- Crear la tabla Profesor
@@ -48,6 +56,8 @@ create table Profesor (
     ID bigint primary key,
     TipoContrato varchar(255) not null,
     foreign key (ID) references Persona(ID)
+        on update cascade
+        on delete cascade
 );
 
 -- Crear la tabla Curso
@@ -58,6 +68,8 @@ create table Curso (
     programa_ID bigint not null,
     activo boolean not null,
     foreign key (programa_ID) references Programa(ID)
+        on update cascade
+        on delete cascade
 );
 
 -- Crear la tabla Inscripción
@@ -68,8 +80,12 @@ create table Inscripcion (
     semestre integer not null,
     estudiante_codigo bigint not null,
     primary key (curso_ID, anio, semestre, estudiante_codigo),
-    foreign key (curso_ID) references Curso(ID),
+    foreign key (curso_ID) references Curso(ID)
+        on update cascade
+        on delete cascade,
     foreign key (estudiante_codigo) references Estudiante(codigo)
+        on update cascade
+        on delete cascade
 );
 
 -- Crear la tabla CursoProfesor
@@ -80,6 +96,10 @@ create table CursoProfesor (
     semestre integer not null,
     curso_ID bigint not null,
     primary key (profesor_ID, anio, semestre, curso_ID),
-    foreign key (profesor_ID) references Profesor(persona_ID),
+    foreign key (profesor_ID) references Profesor(ID)
+        on update cascade
+        on delete cascade,
     foreign key (curso_ID) references Curso(ID)
+        on update cascade
+        on delete cascade
 );

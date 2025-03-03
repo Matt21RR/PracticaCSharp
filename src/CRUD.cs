@@ -1,5 +1,44 @@
+using System.Linq;
 using System.Reflection;
+using MySql.Data.MySqlClient;
 
+public class BaseDeDatos
+{
+    private static string connectionString = "Server=127.0.0.1;Database=csharp;Uid=root@localhost;Pwd=;";
+
+    private static MySqlConnection GetConnection()
+    {
+        return new MySqlConnection(connectionString);
+    }
+
+    public static void EjecutarInsert<T>(string nombreTabla, List<string> indices, Dictionary<string,T> datos){
+      MySqlConnection conexion = GetConnection();
+
+      string sql = "";
+      sql += "INSERT INTO " +nombreTabla;
+      sql += " ( "+indices.ToString()+" ) ";
+      sql += " VALUES ";
+      sql += " ( "+indices.Select(el => "@"+el).ToArray().ToString()+" ) ";
+
+      MySqlCommand cmd = new MySqlCommand(sql, conexion);
+
+      //Obtener y reemplazar los valores en el sql
+      foreach (var llave in indices)
+      {
+        if(llave.Contains("_")){
+          string llaveA = llave.Split("_")[0];
+          string llaveB = llave.Split("_")[1];
+          //! ESTA CHIMBADA VA A REVENTARSE ACA
+          if (datos[llaveA] is IDictionary<string, object> nestedDict){
+            cmd.Parameters.AddWithValue("@"+llave, nestedDict[llaveB]);
+          }
+        }else{
+          cmd.Parameters.AddWithValue("@"+llave,datos[llave]);
+        }
+      }
+      cmd.ExecuteNonQuery();
+    }
+}
 
 public enum Tablas {
   Persona,
@@ -45,12 +84,12 @@ public static class CRUD
 
       return diccionario;
   }
-  public static void crear<T>(T instancia){
+  public static void insertar<T>(T instancia){
     var nombreTabla = instancia.GetType().ToString();
     var diccionarioInstancia = ConvertirADiccionario(instancia);
     List<string> keys = keySets[nombreTabla];
     
-
+    BaseDeDatos.EjecutarInsert(nombreTabla,keys,diccionarioInstancia);
   }
   public static void leer<T>(T instancia){
     var nombreTabla = instancia.GetType().ToString();
