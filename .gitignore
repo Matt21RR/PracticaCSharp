@@ -4,6 +4,7 @@
 /bin
 /obj
 /.vs
+/.vscode
 
 # Directorio para los archivos planos con la informacion que almacena el programa
 /programData
