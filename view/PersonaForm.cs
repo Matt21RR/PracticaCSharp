@@ -11,16 +11,30 @@ using Actividad.src;
 
 namespace Actividad.view
 {
-    public partial class PersonaForm : UserControl
+    public partial class PersonaForm : UserControl, ModificarElemento
     {
         CentralDatos centralDatos;
-        public PersonaForm(CentralDatos centralDatos)
+        Persona personaEditar;
+        public PersonaForm(CentralDatos centralDatos, Persona personaEditar = null)
         {
             InitializeComponent();
             this.centralDatos = centralDatos;
+
+            this.personaEditar = personaEditar;
+            if (personaEditar != null)
+            {
+                nombreInput.Text = personaEditar.nombres;
+                apellidoInput.Text = personaEditar.apellidos;
+                correoElectronicoInput.Text = personaEditar.email;
+            }
         }
 
         private void guardarPersona_Click(object sender, EventArgs e)
+        {
+            crearOEditar();
+        }
+
+        public void crearOEditar()
         {
             string nombre = nombreInput.Text;
             string apellido = apellidoInput.Text;
@@ -32,7 +46,16 @@ namespace Actividad.view
                 return;
             }
 
-            Persona persona = new Persona(centralDatos.Personas.Count + 1, nombre, apellido, correo);
+            if(personaEditar != null)
+            {
+                personaEditar.nombres = nombre;
+                personaEditar.apellidos = apellido;
+                personaEditar.email = correo;
+                MessageBox.Show("¡Se edito correctamente!\n\n" + personaEditar.toString());
+                return;
+            }
+
+            Persona persona = new Persona(nombre, apellido, correo);
             centralDatos.Personas.Add(persona);
             centralDatos.InscripcionesPersonas.inscribir(persona);
 

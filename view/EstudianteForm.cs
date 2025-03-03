@@ -11,19 +11,36 @@ using Actividad.src;
 
 namespace Actividad.view
 {
-    public partial class EstudianteForm : UserControl
+    public partial class EstudianteForm : UserControl, ModificarElemento
     {
         CentralDatos centralDatos;
-        public EstudianteForm(CentralDatos centralDatos)
+        Estudiante estudianteEditar;
+        public EstudianteForm(CentralDatos centralDatos, Estudiante estudianteEditar = null)
         {
             this.centralDatos = centralDatos;
             InitializeComponent();
 
             programaCombo.DataSource = centralDatos.Programas;
             programaCombo.DisplayMember = "nombre";
+
+            this.estudianteEditar = estudianteEditar;
+            if (estudianteEditar != null )
+            {
+                nombreInput.Text = estudianteEditar.nombres;
+                apellidoInput.Text = estudianteEditar.apellidos;
+                correoElectronicoInput.Text = estudianteEditar.email;
+                programaCombo.SelectedItem = estudianteEditar.programa;
+                promedioInput.Value = Convert.ToDecimal(estudianteEditar.promedio);
+                activoCheckBox.Checked = estudianteEditar.activo;
+            }
         }
 
         private void guardarEstudiante_Click(object sender, EventArgs e)
+        {
+            crearOEditar();
+        }
+
+        public void crearOEditar()
         {
             string nombre = nombreInput.Text;
             string apellido = apellidoInput.Text;
@@ -38,15 +55,25 @@ namespace Actividad.view
                 return;
             }
 
-            // TODO: Aqui tener en cuenta la ID de estudiante es correspondiente a la lista de personas, el codigo es el que esta en la lista de estudiantes
-            Estudiante estudiante = new Estudiante(centralDatos.Personas.Count + 1, nombre, apellido, correo, centralDatos.Estudiantes.Count + 1, programa, activo , promedio );
+            if (estudianteEditar != null)
+            {
+                estudianteEditar.nombres = nombre;
+                estudianteEditar.apellidos = apellido;
+                estudianteEditar.email = correo;
+                estudianteEditar.programa = programa;
+                estudianteEditar.promedio = promedio;
+                estudianteEditar.activo = activo;
+                MessageBox.Show("¡Se edito correctamente!\n\n" + estudianteEditar.toString());
+                return;
+            }
+
+            Estudiante estudiante = new Estudiante(nombre, apellido, correo, programa, activo, promedio);
 
             centralDatos.Personas.Add(estudiante);
             centralDatos.Estudiantes.Add(estudiante);
             centralDatos.InscripcionesPersonas.inscribir(estudiante);
 
             MessageBox.Show("¡Se Creo correctamente!\n\n" + estudiante.toString());
-
         }
     }
 }

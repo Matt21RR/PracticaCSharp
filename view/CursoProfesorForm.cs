@@ -11,10 +11,11 @@ using Actividad.src;
 
 namespace Actividad.view
 {
-    public partial class CursoProfesorForm : UserControl
+    public partial class CursoProfesorForm : UserControl, ModificarElemento
     {
         CentralDatos centralDatos;
-        public CursoProfesorForm(CentralDatos centralDatos)
+        CursoProfesor cursoProfesorEditar;
+        public CursoProfesorForm(CentralDatos centralDatos, CursoProfesor cursoProfesorEditar = null)
         {
             InitializeComponent();
             this.centralDatos = centralDatos;
@@ -24,11 +25,26 @@ namespace Actividad.view
 
             profesorCombo.DataSource = centralDatos.Profesores;
             profesorCombo.DisplayMember = "NombreCompleto";
+
+            this.cursoProfesorEditar = cursoProfesorEditar;
+
+            if (cursoProfesorEditar != null)
+            {
+                cursoCombo.SelectedItem = cursoProfesorEditar.curso;
+                profesorCombo.SelectedItem = cursoProfesorEditar.profesor;
+                anioInput.Value = cursoProfesorEditar.anio;
+                semestreInput.Value = cursoProfesorEditar.semestre;
+            }
         }
 
         private void guardarCursoProfesor_Click(object sender, EventArgs e)
         {
-            
+            crearOEditar();
+        }
+
+        public void crearOEditar()
+        {
+
             Curso curso = (Curso)cursoCombo.SelectedItem;
             Profesor profesor = (Profesor)profesorCombo.SelectedItem;
             int anio = Convert.ToInt32(anioInput.Value);
@@ -40,10 +56,20 @@ namespace Actividad.view
                 return;
             }
 
+            if (cursoProfesorEditar != null)
+            {
+                cursoProfesorEditar.curso = curso;
+                cursoProfesorEditar.profesor = profesor;
+                cursoProfesorEditar.anio = anio;
+                cursoProfesorEditar.semestre = semestre;
+                MessageBox.Show("¡Se edito correctamente!\n\n" + cursoProfesorEditar.toString());
+                return;
+            }
+
             CursoProfesor cursoProfesor = new CursoProfesor(profesor, anio, semestre, curso);
 
             centralDatos.CursosProfesores.inscribir(cursoProfesor);
-            
+
             MessageBox.Show("¡Se Creo correctamente!\n\n" + cursoProfesor.toString());
         }
     }

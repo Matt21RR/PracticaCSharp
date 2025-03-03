@@ -11,10 +11,11 @@ using Actividad.src;
 
 namespace Actividad.view
 {
-    public partial class InscripcionForm : UserControl
+    public partial class InscripcionForm : UserControl, ModificarElemento
     {
         CentralDatos centralDatos;
-        public InscripcionForm(CentralDatos centralDatos)
+        Inscripcion inscripcionEditar;
+        public InscripcionForm(CentralDatos centralDatos, Inscripcion inscripcionEditar = null)
         {
             InitializeComponent();
             this.centralDatos = centralDatos;
@@ -24,9 +25,24 @@ namespace Actividad.view
 
             cursoCombo.DataSource = centralDatos.Cursos;
             cursoCombo.DisplayMember = "nombre";
+
+            this.inscripcionEditar = inscripcionEditar;
+
+            if (inscripcionEditar != null)
+            {
+                estudianteCombo.SelectedItem = inscripcionEditar.estudiante;
+                cursoCombo.SelectedItem = inscripcionEditar.curso;
+                anioInput.Value = inscripcionEditar.anio;
+                semestreInput.Value = inscripcionEditar.semestre;
+            }
         }
 
         private void guardarInscripcion_Click(object sender, EventArgs e)
+        {
+            crearOEditar();
+        }
+
+        public void crearOEditar()
         {
             Estudiante estudiante = (Estudiante)estudianteCombo.SelectedItem;
             Curso curso = (Curso)cursoCombo.SelectedItem;
@@ -39,11 +55,20 @@ namespace Actividad.view
                 return;
             }
 
+            if (inscripcionEditar != null)
+            {
+                inscripcionEditar.estudiante = estudiante;
+                inscripcionEditar.curso = curso;
+                inscripcionEditar.anio = anio;
+                inscripcionEditar.semestre = semestre;
+                MessageBox.Show("¡Se edito correctamente!\n\n" + inscripcionEditar.toString());
+                return;
+            }
+
             Inscripcion inscripcion = new Inscripcion(curso, anio, semestre, estudiante);
             centralDatos.CursosInscritos.inscribirCurso(inscripcion);
 
             MessageBox.Show("¡Se Creo correctamente!\n\n" + inscripcion.toString());
         }
-
     }
 }

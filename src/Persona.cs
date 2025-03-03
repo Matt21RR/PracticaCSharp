@@ -1,3 +1,5 @@
+using Actividad.src;
+
 public class Persona
 {
     private int _ID; 
@@ -12,8 +14,8 @@ public class Persona
     {
         get { return $"{_nombres} {_apellidos}"; }
     }
-    public Persona(int ID, string nombres, string  apellidos, string email){
-        this._ID = ID;
+    public Persona(string nombres, string  apellidos, string email){
+        this._ID = GeneradorIds.ObtenerNuevoId(typeof(Persona));
         this._nombres = nombres;
         this._apellidos = apellidos;
         this._email = email;

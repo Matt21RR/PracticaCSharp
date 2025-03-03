@@ -19,6 +19,9 @@
     <Compile Update="view\EstudianteForm.cs">
       <SubType>UserControl</SubType>
     </Compile>
+    <Compile Update="view\Modificar.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
     <Compile Update="view\PersonaForm.cs">
       <SubType>UserControl</SubType>
     </Compile>

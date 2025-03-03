@@ -15,9 +15,18 @@ namespace Actividad
 
         private void button1_Click(object sender, EventArgs e)
         {
+            foreach (var par in GeneradorIds._contadores)
+            {
+                Type tipo = par.Key; // Obtener el tipo (clase)
+                int contador = par.Value; // Obtener el contador
+
+                MessageBox.Show($"Tipo: {tipo.Name}, Contador: {contador}");
+            }
+            
+
             // Crear una nueva pestaña
-            TabPage nuevaPestaña = new TabPage();
-            nuevaPestaña.Text = "Pestaña " + (tabControl1.TabCount + 1);
+            TabPage nuevaPestania = new TabPage();
+            nuevaPestania.Text = "Pestaña " + (tabControl1.TabCount + 1);
 
             // Obtener el tipo de formulario seleccionado en el ComboBox
             string tipoFormulario = nuevaClaseCombo.SelectedItem.ToString();
@@ -58,10 +67,10 @@ namespace Actividad
             // Configurar el formulario para que se muestre dentro de la pestaña
             formulario.BorderStyle = BorderStyle.None;
             formulario.Dock = DockStyle.Fill;
-            nuevaPestaña.Controls.Add(formulario);
+            nuevaPestania.Controls.Add(formulario);
             formulario.Show();
-            tabControl1.TabPages.Add(nuevaPestaña);
-            tabControl1.SelectedTab = nuevaPestaña;
+            tabControl1.TabPages.Add(nuevaPestania);
+            tabControl1.SelectedTab = nuevaPestania;
         }
 
         private void Form1_FormClosing(object sender, FormClosingEventArgs e)
@@ -95,6 +104,19 @@ namespace Actividad
                     e.Cancel = true; // Evita que el formulario se cierre
                     break;
             }
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            TabPage nuevaPestania = new TabPage();
+            nuevaPestania.Text = "Pestaña " + (tabControl1.TabCount + 1);
+
+            Modificar modificar = new Modificar(centralDatos, tabControl1);
+            modificar.Dock = DockStyle.Fill;
+            nuevaPestania.Controls.Add(modificar);
+            modificar.Show();
+            tabControl1.TabPages.Add(nuevaPestania);
+            tabControl1.SelectedTab = nuevaPestania;
         }
     }
 }

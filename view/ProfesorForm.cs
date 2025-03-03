@@ -11,16 +11,31 @@ using Actividad.src;
 
 namespace Actividad.view
 {
-    public partial class ProfesorForm : UserControl
+    public partial class ProfesorForm : UserControl, ModificarElemento
     {
         CentralDatos centralDatos;
-        public ProfesorForm(CentralDatos centralDatos)
+        Profesor profesorEditar;
+        public ProfesorForm(CentralDatos centralDatos, Profesor profesorEditar = null)
         {
             InitializeComponent();
             this.centralDatos = centralDatos;
+            this.profesorEditar = profesorEditar;
+
+            if (profesorEditar != null)
+            {
+                nombreInput.Text = profesorEditar.nombres;
+                apellidoInput.Text = profesorEditar.apellidos;
+                correoElectronicoInput.Text = profesorEditar.email;
+                tipoContratoInput.Text = profesorEditar.tipoContrato;
+            }
         }
 
         private void guardarProfesor_Click(object sender, EventArgs e)
+        {
+            crearOEditar();
+        }
+
+        public void crearOEditar()
         {
             string nombre = nombreInput.Text;
             string apellido = apellidoInput.Text;
@@ -32,8 +47,19 @@ namespace Actividad.view
                 MessageBox.Show("Por favor, llena todos los campos.");
                 return;
             }
+
+            if (profesorEditar != null)
+            {
+                profesorEditar.nombres = nombre;
+                profesorEditar.apellidos = apellido;
+                profesorEditar.email = correo;
+                profesorEditar.tipoContrato = tipoContrato;
+                MessageBox.Show("¡Se edito correctamente!\n\n" + profesorEditar.toString());
+                return;
+            }
+
             // TODO: Aqui tener en cuenta la ID de profesor es correspondiente a la lista de personas
-            Profesor profesor = new Profesor(centralDatos.Personas.Count + 1, nombre, apellido, correo, tipoContrato);
+            Profesor profesor = new Profesor(nombre, apellido, correo, tipoContrato);
 
             centralDatos.Personas.Add(profesor);
             centralDatos.Profesores.Add(profesor);

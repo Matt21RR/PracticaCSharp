@@ -1,3 +1,5 @@
+using Actividad.src;
+
 public class Curso
 {
     private int _ID;
@@ -11,12 +13,13 @@ public class Curso
     public bool activo { get{return _activo;} set{ _activo = value;}} 
 
 
-    public Curso(int ID, string nombre, Programa programa, bool activo){
-        this._ID = ID;
+    public Curso(string nombre, Programa programa, bool activo){
+        this._ID = GeneradorIds.ObtenerNuevoId(typeof(Curso));
         this._nombre = nombre;
         this._programa = programa;
         this._activo = activo;
     }
+
     public string toString(){
         return $"-->Curso:\n\t id:{_ID}\n\t Nombre:{_nombre}\n\t {_programa.toString().Replace("\t ","\t\t ")}\n\t Activo:{_activo}";
     }

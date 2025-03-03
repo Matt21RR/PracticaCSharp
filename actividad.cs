@@ -3,7 +3,7 @@ using System.Text.Json;
 
 class Principal
 {
-    static void lalala()
+    static void das()
     {
         InscripcionesPersonas inscripcionesPersonas = new InscripcionesPersonas();
         if (LeerEscribirArchivos.existe("InscripcionesPersonas.json")) inscripcionesPersonas.cargarDatos();
@@ -26,26 +26,26 @@ class Principal
 
     static void crearEjemplo(CursosInscritos cursosInscritos, InscripcionesPersonas inscripcionesPersonas, CursosProfesores cursosProfesores)
     {
-        Persona decanoCamilo = new Persona(1, "Camilo", "Reyes", "camrey@unillanos.edu.co");
+        Persona decanoCamilo = new Persona( "Camilo", "Reyes", "camrey@unillanos.edu.co");
 
-        Facultad cienciasBasEIng = new Facultad(1, "Facultad de Ciencias Basicas e Ingenieria", decanoCamilo);
+        Facultad cienciasBasEIng = new Facultad( "Facultad de Ciencias Basicas e Ingenieria", decanoCamilo);
 
-        Programa ingSistemas = new Programa(1, "Ingenieria de Sistemas", 10, new DateTime(2004, 12, 21), cienciasBasEIng);
-        Programa ingElectronica = new Programa(2, "Ingenieria de Electronica", 10, new DateTime(2004, 12, 21), cienciasBasEIng);
+        Programa ingSistemas = new Programa( "Ingenieria de Sistemas", 10, new DateTime(2004, 12, 21), cienciasBasEIng);
+        Programa ingElectronica = new Programa( "Ingenieria de Electronica", 10, new DateTime(2004, 12, 21), cienciasBasEIng);
 
-        Estudiante estudianteJuan = new Estudiante(2, "Juan", "Perez", "juanp@unillanos.edu.co", 16001, ingSistemas, true, 4.5f);
-        Estudiante estudiantePedro = new Estudiante(3, "Pedro", "Gomez", "pedrog@unillanos.edu.co", 16002, ingSistemas, true, 4.0f);
-        Estudiante estudianteMaria = new Estudiante(4, "Maria", "Lopez", "marial@unillanos.edu.co", 16003, ingElectronica, true, 4.2f);
+        Estudiante estudianteJuan = new Estudiante( "Juan", "Perez", "juanp@unillanos.edu.co",  ingSistemas, true, 4.5f);
+        Estudiante estudiantePedro = new Estudiante( "Pedro", "Gomez", "pedrog@unillanos.edu.co",  ingSistemas, true, 4.0f);
+        Estudiante estudianteMaria = new Estudiante( "Maria", "Lopez", "marial@unillanos.edu.co",  ingElectronica, true, 4.2f);
 
-        Curso programacion1 = new Curso(1, "Programacion I", ingSistemas, true);
-        Curso programacion2 = new Curso(2, "Programacion II", ingSistemas, true);
-        Curso circuitos = new Curso(3, "Circuitos", ingElectronica, true);
+        Curso programacion1 = new Curso( "Programacion I", ingSistemas, true);
+        Curso programacion2 = new Curso( "Programacion II", ingSistemas, true);
+        Curso circuitos = new Curso( "Circuitos", ingElectronica, true);
 
         Inscripcion inscripcionJuan = new Inscripcion(programacion1, 2023, 2, estudianteJuan);
         Inscripcion inscripcionPedro = new Inscripcion(programacion2, 2023, 2, estudiantePedro);
         Inscripcion inscripcionMaria = new Inscripcion(circuitos, 2023, 2, estudianteMaria);
 
-        Profesor profesorCarlos = new Profesor(5, "Nestor", "Herrera", "nestorh@unillanos.edu.co", "Temporal");
+        Profesor profesorCarlos = new Profesor( "Nestor", "Herrera", "nestorh@unillanos.edu.co", "Temporal");
         CursoProfesor cursoProfesor1 = new CursoProfesor(profesorCarlos, 2023, 2, programacion1);
         CursoProfesor cursoProfesor2 = new CursoProfesor(profesorCarlos, 2024, 3, programacion2);
 
@@ -54,6 +54,7 @@ class Principal
         inscripcionesPersonas.inscribir(estudianteJuan);
         inscripcionesPersonas.inscribir(estudiantePedro);
         inscripcionesPersonas.inscribir(estudianteMaria);
+        inscripcionesPersonas.inscribir(profesorCarlos);
 
         cursosInscritos.inscribirCurso(inscripcionJuan);
         cursosInscritos.inscribirCurso(inscripcionPedro);

@@ -1,3 +1,5 @@
+using Actividad.src;
+
 public class Facultad
 {
     private int _ID; 
@@ -8,8 +10,8 @@ public class Facultad
     public string nombre { get { return _nombre; } set { _nombre = value;}}
     public Persona decano { get { return _decano; }  set { _decano = value; }}
 
-    public Facultad(int ID, string nombre, Persona decano){
-        this._ID = ID;
+    public Facultad(string nombre, Persona decano){
+        this._ID = GeneradorIds.ObtenerNuevoId(typeof(Facultad));
         this._nombre = nombre;
         this._decano = decano;
     }

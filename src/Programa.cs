@@ -1,3 +1,5 @@
+using Actividad.src;
+
 public class Programa
 {
     private int _ID; 
@@ -12,8 +14,9 @@ public class Programa
     public string nombre { get { return _nombre;} set { _nombre = value;}}
     public DateTime registro { get { return _registro;} set { _registro = value;}}
 
-    public Programa(int ID, string nombre, double duracion, DateTime registro, Facultad facultad){
-        this._ID = ID;
+    public Programa(string nombre, double duracion, DateTime registro, Facultad facultad)
+    {
+        this._ID = GeneradorIds.ObtenerNuevoId(typeof(Programa));
         this._nombre = nombre;
         this._duracion = duracion;
         this._registro = registro;

@@ -26,6 +26,10 @@ public class CursosProfesores : Servicios
     {
         _listado = LeerEscribirArchivos.leer<List<CursoProfesor>>("CursosProfesores.json");
     }
+    public void eliminar(CursoProfesor cursoProfesor)
+    {
+        _listado.Remove(cursoProfesor);
+    }
 
     public List<string> toString(){
         List<string> temp = new List<string>();

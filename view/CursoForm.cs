@@ -11,18 +11,32 @@ using Actividad.src;
 
 namespace Actividad.view
 {
-    public partial class CursoForm : UserControl
+    public partial class CursoForm : UserControl, ModificarElemento
     {
         CentralDatos centralDatos;
-        public CursoForm(CentralDatos centralDatos)
+        Curso cursoEditar;
+        public CursoForm(CentralDatos centralDatos, Curso cursoEditar = null)
         {
             InitializeComponent();
             this.centralDatos = centralDatos;
             programaCombo.DataSource = centralDatos.Programas;
             programaCombo.DisplayMember = "nombre";
+            this.cursoEditar = cursoEditar;
+
+            if (cursoEditar != null)
+            {
+                nombreInput.Text = cursoEditar.nombre;
+                programaCombo.SelectedItem = cursoEditar.programa;
+                activoCheckBox.Checked = cursoEditar.activo;
+            }
         }
 
         private void guardarCurso_Click(object sender, EventArgs e)
+        {
+            crearOEditar();
+        }
+
+        public void crearOEditar()
         {
             string nombre = nombreInput.Text;
             Programa programa = (Programa)programaCombo.SelectedItem;
@@ -34,7 +48,16 @@ namespace Actividad.view
                 return;
             }
 
-            Curso curso = new Curso(centralDatos.Cursos.Count + 1,nombre, programa, activo);
+            if (cursoEditar != null)
+            {
+                cursoEditar.nombre = nombre;
+                cursoEditar.programa = programa;
+                cursoEditar.activo = activo;
+                MessageBox.Show("¡Se edito correctamente!\n\n" + cursoEditar.toString());
+                return;
+            }
+
+            Curso curso = new Curso(nombre, programa, activo);
 
             centralDatos.Cursos.Add(curso);
             MessageBox.Show("¡Se Creo correctamente!\n\n" + curso.toString());

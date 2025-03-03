@@ -31,9 +31,9 @@ namespace Actividad.src
 
         private void cargarDatos()
         {
-            InscripcionesPersonas.cargarDatos();
-            CursosInscritos.cargarDatos();
-            CursosProfesores.cargarDatos();
+            if (LeerEscribirArchivos.existe("InscripcionesPersonas.json")) InscripcionesPersonas.cargarDatos();
+            if (LeerEscribirArchivos.existe("CursosInscritos.json")) CursosInscritos.cargarDatos();
+            if (LeerEscribirArchivos.existe("CursosProfesores.json")) CursosProfesores.cargarDatos();
         }
 
         private void inicializarListas()
