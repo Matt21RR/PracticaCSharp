@@ -22,14 +22,8 @@ namespace Actividad
             // persona0.ID = 2;
             // CRUD.insertar(persona0);
 
-<<<<<<< Updated upstream
             // Persona persona = new Persona("Miguel","Traslaviña","matraslavina@unillanos.edu.co");
             // persona.ID = 3;
-=======
-            Persona persona = new Persona("","","");
-            persona.ID = 3;
-            CRUD.borrar(persona);
->>>>>>> Stashed changes
 
             // CRUD.insertar(persona);
             // Facultad facultad = new Facultad("Basicas e Ingeniería",persona);
@@ -40,7 +34,6 @@ namespace Actividad
             // CRUD.insertar(estudiante);
             
 
-<<<<<<< Updated upstream
             // //Imprimiendo los registros
             // foreach (var registro in CRUD.listar(Tablas.Persona))
             // {
@@ -50,17 +43,6 @@ namespace Actividad
             //         Console.WriteLine(celda.Key+" : "+celda.Value);
             //     }
             // } 
-=======
-            // Imprimiendo los registros
-            foreach (var registro in CRUD.listar(Tablas.Persona))
-            {
-                Console.WriteLine("\n");
-                foreach (var celda in registro)
-                {
-                    Console.WriteLine(celda.Key+" : "+celda.Value);
-                }
-            } 
->>>>>>> Stashed changes
             // Console.WriteLine(string.Join(",",CRUD.leer(persona).Keys));
             // Console.WriteLine(string.Join(",",CRUD.leer(persona).Values));
             // CRUD.actualizar(persona);
