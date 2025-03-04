@@ -135,7 +135,7 @@ public class BaseDeDatos
       string sql = "";
       sql += "DELETE FROM " +nombreTabla;
       sql += " WHERE ";
-      sql += " ( "+string.Join(" AND ",indicesClave.Select(el => el+" = @"+el).ToArray())+" ) ";
+      sql += string.Join(" AND ",indicesClave.Select(el => el+" = @"+el).ToArray());
 
       Console.WriteLine(sql);
 
