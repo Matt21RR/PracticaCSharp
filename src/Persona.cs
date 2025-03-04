@@ -14,8 +14,8 @@ public class Persona
     {
         get { return $"{_nombres} {_apellidos}"; }
     }
-    public Persona(string nombres, string  apellidos, string email){
-        this._ID = GeneradorIds.ObtenerNuevoId(typeof(Persona));
+    public Persona(int ID, string nombres, string  apellidos, string email){
+        this._ID = ID;
         this._nombres = nombres;
         this._apellidos = apellidos;
         this._email = email;

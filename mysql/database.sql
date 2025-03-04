@@ -54,7 +54,7 @@ create table Estudiante (
 drop table if exists Profesor;
 create table Profesor (
     ID int primary key,
-    TipoContrato varchar(255) not null,
+    tipoContrato varchar(255) not null,
     foreign key (ID) references Persona(ID)
         on update cascade
         on delete cascade

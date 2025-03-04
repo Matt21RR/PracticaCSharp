@@ -10,8 +10,8 @@ public class Facultad
     public string nombre { get { return _nombre; } set { _nombre = value;}}
     public Persona decano { get { return _decano; }  set { _decano = value; }}
 
-    public Facultad(string nombre, Persona decano){
-        this._ID = GeneradorIds.ObtenerNuevoId(typeof(Facultad));
+    public Facultad(int ID, string nombre, Persona decano){
+        this._ID = ID;
         this._nombre = nombre;
         this._decano = decano;
     }

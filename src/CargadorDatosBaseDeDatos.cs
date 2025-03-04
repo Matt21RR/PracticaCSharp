@@ -48,6 +48,7 @@ namespace Actividad.src
             foreach (var p in CRUD.listar(Tablas.Persona))
             {
                 personas.Add(new Persona(
+                    (int)p["ID"],
                     (string)p["nombres"], 
                     (string)p["apellidos"], 
                     (string)p["email"]));
@@ -55,12 +56,14 @@ namespace Actividad.src
             foreach(var f in CRUD.listar(Tablas.Facultad))
             {
                 facultades.Add(new Facultad(
+                    (int)f["ID"],
                     (string)f["nombre"],
                     (Persona)personas.FirstOrDefault(p => p.ID == (int)f["decano_ID"])));
             }
             foreach (var p in CRUD.listar(Tablas.Programa))
             {
                 programas.Add(new Programa(
+                    (int)p["ID"],
                     (string)p["nombre"], 
                     (double)p["duracion"],
                     (DateTime)p["registro"], 
@@ -84,6 +87,7 @@ namespace Actividad.src
             foreach (var c in CRUD.listar(Tablas.Curso))
             {
                 cursos.Add(new Curso(
+                    (int)c["ID"],
                     (string)c["nombre"],
                     (Programa)programas.FirstOrDefault(p => p.ID == (int)c["programa_ID"]),
                     (bool)c["activo"]));

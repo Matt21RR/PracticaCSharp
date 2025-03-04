@@ -56,7 +56,7 @@ namespace Actividad.view
                 return;
             }
 
-            Persona persona = new Persona(nombre, apellido, correo);
+            Persona persona = new Persona(CRUD.idSiguiente(Tablas.Persona), nombre, apellido, correo);
             centralDatos.Personas.Add(persona);
             centralDatos.InscripcionesPersonas.inscribir(persona);
             centralDatos.Insertar(persona);

@@ -68,7 +68,7 @@ namespace Actividad.view
                 return;
             }
 
-            Estudiante estudiante = new Estudiante(nombre, apellido, correo, programa, activo, promedio);
+            Estudiante estudiante = new Estudiante(CRUD.idSiguiente(Tablas.Estudiante), nombre, apellido, correo, programa, activo, promedio);
 
             centralDatos.Personas.Add(estudiante);
             centralDatos.Estudiantes.Add(estudiante);

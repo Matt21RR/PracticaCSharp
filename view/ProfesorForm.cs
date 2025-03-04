@@ -60,7 +60,7 @@ namespace Actividad.view
             }
 
             // TODO: Aqui tener en cuenta la ID de profesor es correspondiente a la lista de personas
-            Profesor profesor = new Profesor(nombre, apellido, correo, tipoContrato);
+            Profesor profesor = new Profesor(CRUD.idSiguiente(Tablas.Profesor), nombre, apellido, correo, tipoContrato);
 
             centralDatos.Personas.Add(profesor);
             centralDatos.Profesores.Add(profesor);

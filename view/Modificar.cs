@@ -38,7 +38,6 @@ namespace Actividad.view
                         break;
                     case "Persona":
                         centralDatos.Personas.Remove((Persona)elementoCombo.SelectedItem);
-                        centralDatos.InscripcionesPersonas.eliminar((Persona)elementoCombo.SelectedItem);
                         break;
                     case "Programa":
                         centralDatos.Programas.Remove((Programa)elementoCombo.SelectedItem);

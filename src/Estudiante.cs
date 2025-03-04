@@ -11,7 +11,7 @@ public class Estudiante: Persona
     public bool activo { get{return _activo;} set{ _activo = value; }}
     public double promedio { get{return _promedio;} set{ _promedio = value; }}
 
-    public Estudiante(string nombres, string  apellidos, string email, Programa programa, bool activo, double promedio): base(nombres, apellidos, email) {
+    public Estudiante(int ID, string nombres, string  apellidos, string email, Programa programa, bool activo, double promedio): base(ID, nombres, apellidos, email) {
         this._codigo = GeneradorIds.ObtenerNuevoId(typeof(Estudiante));
         this._programa = programa;
         this._activo = activo;

@@ -58,7 +58,7 @@ namespace Actividad.view
                 return;
             }
 
-            Curso curso = new Curso(nombre, programa, activo);
+            Curso curso = new Curso(CRUD.idSiguiente(Tablas.Curso), nombre, programa, activo);
 
             centralDatos.Cursos.Add(curso);
             centralDatos.Insertar(curso);

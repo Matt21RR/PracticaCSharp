@@ -13,8 +13,8 @@ public class Curso
     public bool activo { get{return _activo;} set{ _activo = value;}} 
 
 
-    public Curso(string nombre, Programa programa, bool activo){
-        this._ID = GeneradorIds.ObtenerNuevoId(typeof(Curso));
+    public Curso(int ID, string nombre, Programa programa, bool activo){
+        this._ID = ID;
         this._nombre = nombre;
         this._programa = programa;
         this._activo = activo;
