@@ -44,7 +44,7 @@ public static class CRUD
   private static Dictionary<string, object> ConvertirADiccionario<T>(T objeto)
   {
       var diccionario = new Dictionary<string, object>();
-      var propiedades = typeof(T).GetProperties(BindingFlags.Public | BindingFlags.Instance);
+      var propiedades = objeto.GetType().GetProperties(BindingFlags.Public | BindingFlags.Instance);
 
       foreach (var propiedad in propiedades)
       {
