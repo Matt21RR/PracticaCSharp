@@ -28,9 +28,7 @@ public class BaseDeDatos
         if(llave.Contains("_")){
           string llaveA = llave.Split("_")[0];
           string llaveB = llave.Split("_")[1];
-          if (datos[llaveA] is IDictionary<string, object> nestedDict){
-            cmd.Parameters.AddWithValue("@"+llave, nestedDict[llaveB]);
-          }
+          cmd.Parameters.AddWithValue("@"+llave, datos[llaveA].GetType().GetProperty(llaveB).GetValue(datos[llaveA]));
         }else{
           cmd.Parameters.AddWithValue("@"+llave,datos[llave]);
         }
@@ -56,9 +54,7 @@ public class BaseDeDatos
         if(llave.Contains("_")){
           string llaveA = llave.Split("_")[0];
           string llaveB = llave.Split("_")[1];
-          if (datos[llaveA] is IDictionary<string, object> nestedDict){
-            cmd.Parameters.AddWithValue("@"+llave, nestedDict[llaveB]);
-          }
+          cmd.Parameters.AddWithValue("@"+llave, datos[llaveA].GetType().GetProperty(llaveB).GetValue(datos[llaveA]));
         }else{
           cmd.Parameters.AddWithValue("@"+llave,datos[llave]);
         }
@@ -120,9 +116,7 @@ public class BaseDeDatos
         if(llave.Contains("_")){
           string llaveA = llave.Split("_")[0];
           string llaveB = llave.Split("_")[1];
-          if (datos[llaveA] is IDictionary<string, object> nestedDict){
-            cmd.Parameters.AddWithValue("@"+llave, nestedDict[llaveB]);
-          }
+          cmd.Parameters.AddWithValue("@"+llave, datos[llaveA].GetType().GetProperty(llaveB).GetValue(datos[llaveA]));
         }else{
           cmd.Parameters.AddWithValue("@"+llave,datos[llave]);
         }
@@ -148,9 +142,7 @@ public class BaseDeDatos
         if(llave.Contains("_")){
           string llaveA = llave.Split("_")[0];
           string llaveB = llave.Split("_")[1];
-          if (datos[llaveA] is IDictionary<string, object> nestedDict){
-            cmd.Parameters.AddWithValue("@"+llave, nestedDict[llaveB]);
-          }
+          cmd.Parameters.AddWithValue("@"+llave, datos[llaveA].GetType().GetProperty(llaveB).GetValue(datos[llaveA]));
         }else{
           cmd.Parameters.AddWithValue("@"+llave,datos[llave]);
         }
