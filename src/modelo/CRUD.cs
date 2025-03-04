@@ -19,7 +19,7 @@ public static class CRUD
     {"Facultad",["ID","nombre","decano_ID"]},
     {"Programa",["ID","nombre","duracion","registro","facultad_ID"]},
     {"Estudiante",["ID","codigo","programa_ID","activo","promedio"]},//id de la clase base persona
-    {"Profesor",["ID","TipoContrato"]},//id de la clase base persona
+    {"Profesor",["ID","tipoContrato"]},//id de la clase base persona
     {"Curso",["ID","nombre","programa_ID","activo"]},
     {"Inscripcion",["curso_ID","anio","semestre","estudiante_codigo"]},
     {"CursoProfesor",["profesor_ID","anio","semestre","curso_ID"]}
