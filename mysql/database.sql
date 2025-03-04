@@ -40,7 +40,7 @@ create table Estudiante (
     codigo int primary key,
     programa_ID int not null,
     activo boolean not null,
-    promedio int not null,
+    promedio DOUBLE not null,
     ID int not null,
     foreign key (ID) references Persona(ID) 
         on update cascade

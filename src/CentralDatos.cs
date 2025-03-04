@@ -58,6 +58,7 @@ namespace Actividad.src
         public void Eliminar<T>(T elementoEliminar)
         {
             CRUD.borrar(elementoEliminar);
+            _cargadorDatos.CargarDatos(Personas, Estudiantes, Profesores, Cursos, Facultades, Programas);
         }
 
     }
