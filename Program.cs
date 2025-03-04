@@ -17,8 +17,6 @@ namespace Actividad
             // To customize application configuration such as set high DPI settings or default font,
             // see https://aka.ms/applicationconfiguration.
             AllocConsole();//Permitirá enlazar el programa a una consola
-            InscripcionesPersonas inscripcionesPersonas = new InscripcionesPersonas();
-            if (LeerEscribirArchivos.existe("InscripcionesPersonas.json")) inscripcionesPersonas.cargarDatos();
 
             ApplicationConfiguration.Initialize();
             Application.Run(new Form1());
