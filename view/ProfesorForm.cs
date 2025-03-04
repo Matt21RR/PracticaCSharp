@@ -54,6 +54,7 @@ namespace Actividad.view
                 profesorEditar.apellidos = apellido;
                 profesorEditar.email = correo;
                 profesorEditar.tipoContrato = tipoContrato;
+                centralDatos.Actualizar(profesorEditar);
                 MessageBox.Show("¡Se edito correctamente!\n\n" + profesorEditar.toString());
                 return;
             }
@@ -64,7 +65,7 @@ namespace Actividad.view
             centralDatos.Personas.Add(profesor);
             centralDatos.Profesores.Add(profesor);
             centralDatos.InscripcionesPersonas.inscribir(profesor);
-
+            centralDatos.Insertar(profesor);
             MessageBox.Show("¡Se Creo correctamente!\n\n" + profesor.toString());
         }
     }

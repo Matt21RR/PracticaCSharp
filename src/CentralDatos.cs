@@ -19,57 +19,39 @@ namespace Actividad.src
         public BindingList<Programa> Programas { get; private set; }
         public BindingList<Persona> Personas { get; private set; }
 
-        public CentralDatos(InscripcionesPersonas inscripcionesPersonas, CursosInscritos cursosInscritos, CursosProfesores cursosProfesores)
+        private IPersistenciaDatos _cargadorDatos;
+        public CentralDatos(InscripcionesPersonas inscripcionesPersonas, CursosInscritos cursosInscritos, CursosProfesores cursosProfesores, IPersistenciaDatos cargadorDatos)
         {
             this.InscripcionesPersonas = inscripcionesPersonas;
             this.CursosInscritos = cursosInscritos;
             this.CursosProfesores = cursosProfesores;
+            this._cargadorDatos = cargadorDatos;
 
-            cargarDatos();
-            inicializarListas();
+            // Inicializar las listas
+            Personas = new BindingList<Persona>();
+            Estudiantes = new BindingList<Estudiante>();
+            Profesores = new BindingList<Profesor>();
+            Cursos = new BindingList<Curso>();
+            Facultades = new BindingList<Facultad>();
+            Programas = new BindingList<Programa>();
+
+            _cargadorDatos.CargarDatos(Personas, Estudiantes, Profesores, Cursos, Facultades, Programas);
         }
 
-        private void cargarDatos()
+        public void Insertar<T>(T elementoInsertar)
         {
-            if (LeerEscribirArchivos.existe("InscripcionesPersonas.json")) InscripcionesPersonas.cargarDatos();
-            if (LeerEscribirArchivos.existe("CursosInscritos.json")) CursosInscritos.cargarDatos();
-            if (LeerEscribirArchivos.existe("CursosProfesores.json")) CursosProfesores.cargarDatos();
+            CRUD.insertar(elementoInsertar);
         }
 
-        private void inicializarListas()
+        public void Actualizar<T>(T elementoActualizar)
         {
-            Personas = FiltrarDuplicados(InscripcionesPersonas.listado, p => p.ID);
-            Estudiantes = FiltrarDuplicados(InscripcionesPersonas.listado.OfType<Estudiante>(), e => e.ID);
-            Profesores = FiltrarDuplicados(InscripcionesPersonas.listado.OfType<Profesor>(), p => p.ID);
-            Cursos = FiltrarDuplicados(CursosInscritos.listado.Select(i => i.curso), c => c.ID);
-            Facultades = FiltrarDuplicados(CursosInscritos.listado.Select(i => i.curso.programa.facultad), f => f.ID);
-            Programas = FiltrarDuplicados(CursosInscritos.listado.Select(i => i.curso.programa), p => p.ID);
-            Profesores = FiltrarDuplicados(CursosProfesores.listado.Select(i => i.profesor), p => p.ID);
+            CRUD.actualizar(elementoActualizar);
         }
 
-        // Método genérico para filtrar duplicados usando un diccionario
-        private BindingList<T> FiltrarDuplicados<T>(IEnumerable<T> elementos, Func<T, int> obtenerId)
+        public void Eliminar<T>(T elementoEliminar)
         {
-            // Verificar si la colección es nula o está vacía
-            if (elementos == null || !elementos.Any())
-            {
-                return new BindingList<T>();
-            }
-
-            var diccionario = new Dictionary<int, T>();
-
-            foreach (var elemento in elementos)
-            {
-                if (elemento == null) continue; // Ignorar elementos nulos
-
-                int id = obtenerId(elemento);
-                if (!diccionario.ContainsKey(id))
-                {
-                    diccionario.Add(id, elemento);
-                }
-            }
-
-            return new BindingList<T>(diccionario.Values.ToList());
+            CRUD.borrar(elementoEliminar);
         }
+
     }
 }

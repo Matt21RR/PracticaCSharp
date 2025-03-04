@@ -56,12 +56,14 @@ namespace Actividad.view
                 programaEditar.nombre = nombre;
                 programaEditar.duracion = duracion;
                 programaEditar.registro = registro;
+                centralDatos.Actualizar(programaEditar);
                 MessageBox.Show("¡Se edito correctamente!\n\n" + programaEditar.toString());
                 return;
             }
 
             Programa programa = new Programa(nombre, duracion, registro, facultad);
             centralDatos.Programas.Add(programa);
+            centralDatos.Insertar(programa);
             MessageBox.Show("¡Se Creo correctamente!\n\n" + programa.toString());
         }
     }

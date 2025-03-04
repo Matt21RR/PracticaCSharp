@@ -35,28 +35,36 @@ namespace Actividad.view
                 {
                     case "Estudiante":
                         centralDatos.Estudiantes.Remove((Estudiante)elementoCombo.SelectedItem);
+                        centralDatos.Eliminar((Estudiante)elementoCombo.SelectedItem);
                         break;
                     case "Persona":
                         centralDatos.Personas.Remove((Persona)elementoCombo.SelectedItem);
                         centralDatos.InscripcionesPersonas.eliminar((Persona)elementoCombo.SelectedItem);
+                        centralDatos.Eliminar((Persona)elementoCombo.SelectedItem);
                         break;
                     case "Programa":
                         centralDatos.Programas.Remove((Programa)elementoCombo.SelectedItem);
+                        centralDatos.Eliminar((Programa)elementoCombo.SelectedItem);
                         break;
                     case "Facultad":
                         centralDatos.Facultades.Remove((Facultad)elementoCombo.SelectedItem);
+                        centralDatos.Eliminar((Facultad)elementoCombo.SelectedItem);
                         break;
                     case "Profesor":
                         centralDatos.Profesores.Remove((Profesor)elementoCombo.SelectedItem);
+                        centralDatos.Eliminar((Profesor)elementoCombo.SelectedItem);
                         break;
                     case "Curso":
                         centralDatos.Cursos.Remove((Curso)elementoCombo.SelectedItem);
+                        centralDatos.Eliminar((Curso)elementoCombo.SelectedItem);
                         break;
                     case "Inscripcion":
                         centralDatos.CursosInscritos.eliminar((Inscripcion)elementoCombo.SelectedItem);
+                        centralDatos.Eliminar((Inscripcion)elementoCombo.SelectedItem);
                         break;
                     case "Curso con profesor":
                         centralDatos.CursosProfesores.eliminar((CursoProfesor)elementoCombo.SelectedItem);
+                        centralDatos.Eliminar((CursoProfesor)elementoCombo.SelectedItem);
                         break;
                     default:
                         MessageBox.Show("Selecciona un tipo válido.");
@@ -122,28 +130,28 @@ namespace Actividad.view
             switch (tipoFormulario)
             {
                 case "Estudiante":
-                    formulario = new EstudianteForm(centralDatos);
+                    formulario = new EstudianteForm(centralDatos, (Estudiante)elementoCombo.SelectedItem);
                     break;
                 case "Persona":
-                    formulario = new PersonaForm(centralDatos);
+                    formulario = new PersonaForm(centralDatos, (Persona)elementoCombo.SelectedItem);
                     break;
                 case "Programa":
                     formulario = new ProgramaForm(centralDatos, (Programa)elementoCombo.SelectedItem);
                     break;
                 case "Facultad":
-                    formulario = new FacultadForm(centralDatos);
+                    formulario = new FacultadForm(centralDatos, (Facultad)elementoCombo.SelectedItem);
                     break;
                 case "Profesor":
-                    formulario = new ProfesorForm(centralDatos);
+                    formulario = new ProfesorForm(centralDatos, (Profesor)elementoCombo.SelectedItem);
                     break;
                 case "Curso":
-                    formulario = new CursoForm(centralDatos);
+                    formulario = new CursoForm(centralDatos, (Curso)elementoCombo.SelectedItem);
                     break;
                 case "Inscripcion":
-                    formulario = new InscripcionForm(centralDatos);
+                    formulario = new InscripcionForm(centralDatos, (Inscripcion)elementoCombo.SelectedItem);
                     break;
                 case "Curso con profesor":
-                    formulario = new CursoProfesorForm(centralDatos);
+                    formulario = new CursoProfesorForm(centralDatos, (CursoProfesor)elementoCombo.SelectedItem);
                     break;
                 default:
                     MessageBox.Show("Selecciona un tipo válido.");

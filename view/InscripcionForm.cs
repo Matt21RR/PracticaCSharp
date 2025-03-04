@@ -61,13 +61,14 @@ namespace Actividad.view
                 inscripcionEditar.curso = curso;
                 inscripcionEditar.anio = anio;
                 inscripcionEditar.semestre = semestre;
+                centralDatos.Actualizar(inscripcionEditar);
                 MessageBox.Show("¡Se edito correctamente!\n\n" + inscripcionEditar.toString());
                 return;
             }
 
             Inscripcion inscripcion = new Inscripcion(curso, anio, semestre, estudiante);
             centralDatos.CursosInscritos.inscribirCurso(inscripcion);
-
+            centralDatos.Insertar(inscripcion);
             MessageBox.Show("¡Se Creo correctamente!\n\n" + inscripcion.toString());
         }
     }

@@ -53,6 +53,7 @@ namespace Actividad.view
                 cursoEditar.nombre = nombre;
                 cursoEditar.programa = programa;
                 cursoEditar.activo = activo;
+                centralDatos.Actualizar(cursoEditar);
                 MessageBox.Show("¡Se edito correctamente!\n\n" + cursoEditar.toString());
                 return;
             }
@@ -60,6 +61,7 @@ namespace Actividad.view
             Curso curso = new Curso(nombre, programa, activo);
 
             centralDatos.Cursos.Add(curso);
+            centralDatos.Insertar(curso);
             MessageBox.Show("¡Se Creo correctamente!\n\n" + curso.toString());
         }
     }

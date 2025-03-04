@@ -20,6 +20,15 @@ public class Persona
         this._apellidos = apellidos;
         this._email = email;
     }
+    public Persona() { }
+
+    public Persona(Persona persona)
+    {
+        this._ID = persona.ID;
+        this._nombres = persona.nombres;
+        this._apellidos = persona.apellidos;
+        this._email = persona.email;
+    }
     public virtual string toString(){
         return $"-->Persona:\n\t Id:{_ID}\n\t Nombres:{_nombres}\n\t Apellidos:{_apellidos}\n\t Email:{_email}";
     }

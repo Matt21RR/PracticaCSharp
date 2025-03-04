@@ -49,11 +49,13 @@ namespace Actividad.view
             {
                 facultadEditar.nombre = nombre;
                 facultadEditar.decano = decano;
+                centralDatos.Actualizar(facultadEditar);
                 MessageBox.Show("¡Se edito correctamente!\n\n" + facultadEditar.toString());
                 return;
             }
             Facultad facultad = new Facultad(nombre, decano);
             centralDatos.Facultades.Add(facultad);
+            centralDatos.Insertar(facultad);
             MessageBox.Show("¡Se Creo correctamente!\n\n" + facultad.toString());
         }
     }

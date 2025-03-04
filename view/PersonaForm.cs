@@ -51,6 +51,7 @@ namespace Actividad.view
                 personaEditar.nombres = nombre;
                 personaEditar.apellidos = apellido;
                 personaEditar.email = correo;
+                centralDatos.Actualizar(personaEditar);
                 MessageBox.Show("¡Se edito correctamente!\n\n" + personaEditar.toString());
                 return;
             }
@@ -58,7 +59,7 @@ namespace Actividad.view
             Persona persona = new Persona(nombre, apellido, correo);
             centralDatos.Personas.Add(persona);
             centralDatos.InscripcionesPersonas.inscribir(persona);
-
+            centralDatos.Insertar(persona);
             MessageBox.Show("¡Se Creo correctamente!\n\n" + persona.toString());
         }
     }

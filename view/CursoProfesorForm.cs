@@ -62,6 +62,7 @@ namespace Actividad.view
                 cursoProfesorEditar.profesor = profesor;
                 cursoProfesorEditar.anio = anio;
                 cursoProfesorEditar.semestre = semestre;
+                centralDatos.Actualizar(cursoProfesorEditar);
                 MessageBox.Show("¡Se edito correctamente!\n\n" + cursoProfesorEditar.toString());
                 return;
             }
@@ -69,7 +70,7 @@ namespace Actividad.view
             CursoProfesor cursoProfesor = new CursoProfesor(profesor, anio, semestre, curso);
 
             centralDatos.CursosProfesores.inscribir(cursoProfesor);
-
+            centralDatos.Insertar(cursoProfesor);
             MessageBox.Show("¡Se Creo correctamente!\n\n" + cursoProfesor.toString());
         }
     }

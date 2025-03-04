@@ -18,6 +18,19 @@ public class Estudiante: Persona
         this._promedio = promedio;
     }
 
+    public Estudiante(Persona persona, double codigo, Programa programa, bool activo, double promedio)
+    {
+        this.ID = persona.ID;
+        this.nombres = persona.nombres;
+        this.apellidos = persona.apellidos;
+        this.email = persona.email;
+
+        this._codigo = codigo;
+        this._programa = programa;
+        this._activo = activo;
+        this._promedio = promedio;
+    }
+
     public override string toString(){
         return $"-->Estudiante:\n\t {base.toString().Replace("\t ","\t\t ")}\n\t Codigo:{_codigo}\n\t Programa: {_programa}\n\t Promedio:{_promedio}\n\t Activo:{_activo} ";
     } 

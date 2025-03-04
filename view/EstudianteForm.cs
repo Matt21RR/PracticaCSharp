@@ -63,6 +63,7 @@ namespace Actividad.view
                 estudianteEditar.programa = programa;
                 estudianteEditar.promedio = promedio;
                 estudianteEditar.activo = activo;
+                centralDatos.Actualizar(estudianteEditar);
                 MessageBox.Show("¡Se edito correctamente!\n\n" + estudianteEditar.toString());
                 return;
             }
@@ -72,7 +73,7 @@ namespace Actividad.view
             centralDatos.Personas.Add(estudiante);
             centralDatos.Estudiantes.Add(estudiante);
             centralDatos.InscripcionesPersonas.inscribir(estudiante);
-
+            centralDatos.Insertar(estudiante);
             MessageBox.Show("¡Se Creo correctamente!\n\n" + estudiante.toString());
         }
     }

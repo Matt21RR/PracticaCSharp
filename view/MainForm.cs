@@ -10,7 +10,8 @@ namespace Actividad
         {
             InitializeComponent();
 
-            centralDatos = new CentralDatos(new InscripcionesPersonas(), new CursosInscritos(), new CursosProfesores());
+            CargadorDatosBaseDeDatos cargadorDatosBaseDeDatos = new CargadorDatosBaseDeDatos(centralDatos.InscripcionesPersonas, centralDatos.CursosInscritos, centralDatos.CursosProfesores);
+            centralDatos = new CentralDatos(new InscripcionesPersonas(), new CursosInscritos(), new CursosProfesores(), cargadorDatosBaseDeDatos);
         }
 
         private void button1_Click(object sender, EventArgs e)
