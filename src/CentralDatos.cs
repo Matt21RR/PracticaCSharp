@@ -28,6 +28,12 @@ namespace Actividad.src
             this._cargadorDatos = cargadorDatos;
 
             // Inicializar las listas
+            inicializar();
+        }
+
+        private void inicializar()
+        {
+            // Inicializar las listas
             Personas = new BindingList<Persona>();
             Estudiantes = new BindingList<Estudiante>();
             Profesores = new BindingList<Profesor>();
@@ -36,6 +42,7 @@ namespace Actividad.src
             Programas = new BindingList<Programa>();
 
             _cargadorDatos.CargarDatos(Personas, Estudiantes, Profesores, Cursos, Facultades, Programas);
+
         }
 
         public void Insertar<T>(T elementoInsertar)

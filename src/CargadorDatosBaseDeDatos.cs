@@ -20,6 +20,13 @@ namespace Actividad.src
             _cursosProfesores = cursosProfesores;
         }
 
+        public CargadorDatosBaseDeDatos(CentralDatos centralDatos)
+        {
+            _inscripcionesPersonas = centralDatos.InscripcionesPersonas;
+            _cursosInscritos = centralDatos.CursosInscritos;
+            _cursosProfesores = centralDatos.CursosProfesores;
+        }
+
         public void CargarDatos(
             BindingList<Persona> personas,
             BindingList<Estudiante> estudiantes,
