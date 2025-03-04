@@ -43,6 +43,9 @@ namespace Actividad.src
             cursos.Clear();
             facultades.Clear();
             programas.Clear();
+            _cursosInscritos.listado.Clear();
+            _cursosProfesores.listado.Clear();
+            _cursosInscritos.listado.Clear();
 
             // Cargar datos de la base de datos
             foreach (var p in CRUD.listar(Tablas.Persona))
@@ -53,7 +56,8 @@ namespace Actividad.src
                     (string)p["apellidos"], 
                     (string)p["email"]));
             }
-            foreach(var f in CRUD.listar(Tablas.Facultad))
+            _inscripcionesPersonas.listado = new List<Persona>(_inscripcionesPersonas.listado);
+            foreach (var f in CRUD.listar(Tablas.Facultad))
             {
                 facultades.Add(new Facultad(
                     (int)f["ID"],
