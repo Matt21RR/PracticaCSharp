@@ -101,11 +101,11 @@ namespace Actividad.view
                     elementoCombo.DisplayMember = "nombre";
                     break;
                 case "Inscripcion":
-                    elementoCombo.DataSource = centralDatos.InscripcionesPersonas.listado;
+                    elementoCombo.DataSource = centralDatos.CursosInscritos.listado;
                     elementoCombo.DisplayMember = "ID";
                     break;
                 case "Curso con profesor":
-                    elementoCombo.DataSource = centralDatos.CursosInscritos.listado;
+                    elementoCombo.DataSource = centralDatos.CursosProfesores.listado;
                     elementoCombo.DisplayMember = "ID";
                     break;
                 default:
