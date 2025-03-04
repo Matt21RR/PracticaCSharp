@@ -77,6 +77,16 @@ public static class CRUD
     return BaseDeDatos.EjecutarSelectGeneral(nombreTabla);
   }
 
+  public static int idSiguiente(Tablas enumTabla){
+    string nombreTabla = getTableNameFromEnum((int)enumTabla);
+    var listado = BaseDeDatos.EjecutarSelectGeneral(nombreTabla);
+    if(listado.Count() > 0){
+      return (int)listado.Last()[primaryKeySets[nombreTabla][0]] +1;
+    }else{
+      return 1;
+    }
+  }
+
   public static void actualizar<T>(T instancia){
     var nombreTabla = instancia.GetType().ToString();
     List<string> keys = keySets[nombreTabla];
