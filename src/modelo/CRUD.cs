@@ -72,8 +72,8 @@ public static class CRUD
     return BaseDeDatos.EjecutarSelectEspecifico(nombreTabla,primaryKeys,diccionarioInstancia);
   }
 
-  public static List<Dictionary<string,object>> listar(int enumTabla){
-    string nombreTabla = getTableNameFromEnum(enumTabla);
+  public static List<Dictionary<string,object>> listar(Tablas enumTabla){
+    string nombreTabla = getTableNameFromEnum((int)enumTabla);
     return BaseDeDatos.EjecutarSelectGeneral(nombreTabla);
   }
 

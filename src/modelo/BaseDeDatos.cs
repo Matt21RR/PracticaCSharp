@@ -3,7 +3,7 @@ using MySql.Data.MySqlClient;
 
 public class BaseDeDatos
 {
-    private static string connectionString = "Server=127.0.0.1;Database=csharp;Uid=root@localhost;Pwd=;";
+    private static string connectionString = "Server=127.0.0.1;Database=csharp;Uid=csharp;Pwd=csharp;";
 
     private static MySqlConnection GetConnection()
     {
@@ -64,10 +64,14 @@ public class BaseDeDatos
         }
       }
       using (MySqlDataReader reader = cmd.ExecuteReader()){
-        conexion.Close();
         if (reader.Read()){// Si se encuentra el usuario
-          return Enumerable.Range(0, reader.FieldCount).ToDictionary(reader.GetName, reader.GetValue);
+          Dictionary<string,object> res = Enumerable.Range(0, reader.FieldCount).ToDictionary(reader.GetName, reader.GetValue);
+          reader.Close();
+          conexion.Close();
+          return res;
         }else{
+          reader.Close();
+          conexion.Close();
           throw new Exception("Registro no encontrado en la tabla "+nombreTabla);
         }
       }
@@ -88,6 +92,7 @@ public class BaseDeDatos
         while (reader.Read()){// Si se encuentra el usuario
           resList.Add(Enumerable.Range(0, reader.FieldCount).ToDictionary(reader.GetName, reader.GetValue));
         }
+        reader.Close();
       }
 
       conexion.Close();
