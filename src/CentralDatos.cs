@@ -53,6 +53,7 @@ namespace Actividad.src
         public void Actualizar<T>(T elementoActualizar)
         {
             CRUD.actualizar(elementoActualizar);
+            _cargadorDatos.CargarDatos(Personas, Estudiantes, Profesores, Cursos, Facultades, Programas);
         }
 
         public void Eliminar<T>(T elementoEliminar)

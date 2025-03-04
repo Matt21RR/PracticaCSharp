@@ -82,7 +82,7 @@ namespace Actividad.src
             {
                 profesores.Add(new Profesor(
                     (Persona)personas.FirstOrDefault(pe => pe.ID == (int)p["ID"]),
-                    (string)p["TipoContrato"]));
+                    (string)p["tipoContrato"]));
             }
             foreach (var c in CRUD.listar(Tablas.Curso))
             {

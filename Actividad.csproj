@@ -9,6 +9,10 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="actividad.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
     <Folder Include="programData\" />
   </ItemGroup>
 

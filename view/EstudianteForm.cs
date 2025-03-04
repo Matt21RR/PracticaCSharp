@@ -67,12 +67,14 @@ namespace Actividad.view
                 MessageBox.Show("¡Se edito correctamente!\n\n" + estudianteEditar.toString());
                 return;
             }
-
-            Estudiante estudiante = new Estudiante(CRUD.idSiguiente(Tablas.Estudiante), nombre, apellido, correo, programa, activo, promedio);
+            Persona persona = new Persona(CRUD.idSiguiente(Tablas.Persona), nombre, apellido, correo);
+            Estudiante estudiante = new Estudiante(persona,CRUD.idSiguiente(Tablas.Estudiante), programa, activo, promedio);
 
             centralDatos.Personas.Add(estudiante);
             centralDatos.Estudiantes.Add(estudiante);
             centralDatos.InscripcionesPersonas.inscribir(estudiante);
+
+            centralDatos.Insertar(persona);
             centralDatos.Insertar(estudiante);
             MessageBox.Show("¡Se Creo correctamente!\n\n" + estudiante.toString());
         }
