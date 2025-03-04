@@ -21,7 +21,7 @@ public class InscripcionesPersonas
         _listado.Add(persona);
     }
     public void eliminar(Persona persona){
-        _listado.RemoveAt(buscarPersona(persona));
+        _listado.Remove(persona);
     }
     private int buscarPersona(Persona persona){
         return _listado.FindIndex(person => person.ID == persona.ID);

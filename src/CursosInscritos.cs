@@ -20,7 +20,7 @@ public class CursosInscritos : Servicios {
         _listado.Add(inscripcion);
     }
     public void eliminar(Inscripcion inscripcion){
-        _listado.RemoveAt(buscarInscripcion(inscripcion));
+        _listado.Remove(inscripcion);
     }
     private int buscarInscripcion(Inscripcion inscripcion){
         return _listado.FindIndex(insc => insc.estudiante.ID == inscripcion.estudiante.ID && insc.curso.ID == inscripcion.curso.ID);
