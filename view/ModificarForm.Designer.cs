@@ -1,6 +1,6 @@
 ﻿namespace Actividad.view
 {
-    partial class Modificar
+    partial class ModificarForm
     {
         /// <summary> 
         /// Required designer variable.

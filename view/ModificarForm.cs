@@ -11,15 +11,15 @@ using Actividad.src;
 
 namespace Actividad.view
 {
-    public partial class Modificar : UserControl
+    public partial class ModificarForm : UserControl
     {
         CentralDatos centralDatos;
-        TabControl tabControl;
-        public Modificar(CentralDatos centralDatos, TabControl tabControl)
+        GestorPestanas gestorPestanas;
+        public ModificarForm(CentralDatos centralDatos, GestorPestanas gestorPestanas)
         {
             InitializeComponent();
             this.centralDatos = centralDatos;
-            this.tabControl = tabControl;
+            this.gestorPestanas = gestorPestanas;
 
             elementoCombo.DataSource = centralDatos.Facultades;
             elementoCombo.DisplayMember = "nombre";
@@ -70,7 +70,9 @@ namespace Actividad.view
             MessageBox.Show("Elemento eliminado correctamente.");
         }
 
-        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+
+        // Actualiza el comboBox de elementos dependiendo del tipo seleccionado
+        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e) 
         {
             string tipoFormulario = tipoCombo.SelectedItem.ToString();
 
@@ -114,49 +116,19 @@ namespace Actividad.view
             }
         }
 
-        private void guardarElementos_Click(object sender, EventArgs e)
+
+        // Evento correspondiente del boton editar elemento
+        private void guardarElementos_Click(object sender, EventArgs e) 
         {
             string tipoFormulario = tipoCombo.SelectedItem.ToString();
 
-            UserControl formulario = null;
-            switch (tipoFormulario)
-            {
-                case "Estudiante":
-                    formulario = new EstudianteForm(centralDatos, (Estudiante)elementoCombo.SelectedItem);
-                    break;
-                case "Persona":
-                    formulario = new PersonaForm(centralDatos, (Persona)elementoCombo.SelectedItem);
-                    break;
-                case "Programa":
-                    formulario = new ProgramaForm(centralDatos, (Programa)elementoCombo.SelectedItem);
-                    break;
-                case "Facultad":
-                    formulario = new FacultadForm(centralDatos, (Facultad)elementoCombo.SelectedItem);
-                    break;
-                case "Profesor":
-                    formulario = new ProfesorForm(centralDatos, (Profesor)elementoCombo.SelectedItem);
-                    break;
-                case "Curso":
-                    formulario = new CursoForm(centralDatos, (Curso)elementoCombo.SelectedItem);
-                    break;
-                case "Inscripcion":
-                    formulario = new InscripcionForm(centralDatos, (Inscripcion)elementoCombo.SelectedItem);
-                    break;
-                case "Curso con profesor":
-                    formulario = new CursoProfesorForm(centralDatos, (CursoProfesor)elementoCombo.SelectedItem);
-                    break;
-                default:
-                    MessageBox.Show("Selecciona un tipo válido.");
-                    return;
-            }
-            TabPage nuevaPestania = new TabPage();
-            nuevaPestania.Text = "Pestaña " + (tabControl.TabCount + 1);
 
-            formulario.Dock = DockStyle.Fill;
-            nuevaPestania.Controls.Add(formulario);
-            formulario.Show();
-            tabControl.TabPages.Add(nuevaPestania);
-            tabControl.SelectedTab = nuevaPestania;
+            string tipo = tipoCombo.SelectedItem.ToString();
+            object elemento = elementoCombo.SelectedItem;
+
+            UserControl formulario = FabricaFormularios.CrearFormulario(tipo, centralDatos, elemento);
+            gestorPestanas.AgregarPestana(formulario, "Pestaña " + (gestorPestanas.NumeroPestanas + 1));
+
         }
     }
 }
