@@ -6,21 +6,21 @@ namespace Actividad
     public partial class Form1 : Form
     {
         CentralDatos centralDatos;
+        GestorPestanas gestorPestanas;
         public Form1()
         {   InscripcionesPersonas inscripcionesPersonas = new InscripcionesPersonas();
             CursosInscritos cursosInscritos = new CursosInscritos();
             CursosProfesores cursosProfesores = new CursosProfesores();
 
-            CargadorDatosBaseDeDatos cargadorDatosBaseDeDatos = new CargadorDatosBaseDeDatos(inscripcionesPersonas, cursosInscritos, cursosProfesores); 
+            IPersistenciaDatos cargadorDatosBaseDeDatos = new CargadorDatosBaseDeDatos(inscripcionesPersonas, cursosInscritos, cursosProfesores); 
             centralDatos = new CentralDatos(inscripcionesPersonas, cursosInscritos, cursosProfesores, cargadorDatosBaseDeDatos);
+            
             InitializeComponent();
+            gestorPestanas = new GestorPestanas(tabControl1);
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
-            // Crear una nueva pesta�a
-            TabPage nuevaPestania = new TabPage();
-            nuevaPestania.Text = "Pestaña " + (tabControl1.TabCount + 1);
 
             // Obtener el tipo de formulario seleccionado en el ComboBox
             string tipoFormulario = nuevaClaseCombo.SelectedItem.ToString();
@@ -59,12 +59,7 @@ namespace Actividad
             }
 
             // Configurar el formulario para que se muestre dentro de la pesta�a
-            formulario.BorderStyle = BorderStyle.None;
-            formulario.Dock = DockStyle.Fill;
-            nuevaPestania.Controls.Add(formulario);
-            formulario.Show();
-            tabControl1.TabPages.Add(nuevaPestania);
-            tabControl1.SelectedTab = nuevaPestania;
+            gestorPestanas.AgregarPestana( formulario, "Pestaña " + (gestorPestanas.NumeroPestanas + 1));
         }
 
         private void Form1_FormClosing(object sender, FormClosingEventArgs e)
