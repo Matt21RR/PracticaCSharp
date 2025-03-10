@@ -9,7 +9,10 @@ namespace Actividad.src
 {
     public static class FabricaFormularios
     {
-        public static UserControl CrearFormulario(string tipo, CentralDatos centralDatos, object elemento)
+
+        // Método que crea un formulario de acuerdo al tipo de elemento que se desea crear o editar,
+        // Si se desea editar un elemento se debe pasar el elemento como argumento
+        public static UserControl CrearFormulario(string tipo, CentralDatos centralDatos, object elemento = null)
         {
             switch (tipo)
             {

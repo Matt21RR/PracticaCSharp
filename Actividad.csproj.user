@@ -19,7 +19,7 @@
     <Compile Update="view\EstudianteForm.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Update="view\Modificar.cs">
+    <Compile Update="view\ModificarForm.cs">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Update="view\PersonaForm.cs">

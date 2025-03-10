@@ -1,5 +1,6 @@
 using Actividad.src;
 using Actividad.view;
+using System.Xml.Linq;
 
 namespace Actividad
 {
@@ -19,47 +20,23 @@ namespace Actividad
             gestorPestanas = new GestorPestanas(tabControl1);
         }
 
-        private void button1_Click(object sender, EventArgs e)
+
+        // Agregar nueva pestaña
+        private void button1_Click(object sender, EventArgs e) 
         {
 
             // Obtener el tipo de formulario seleccionado en el ComboBox
             string tipoFormulario = nuevaClaseCombo.SelectedItem.ToString();
-
-            // Instanciar el formulario correspondiente
-            UserControl formulario = null;
-            switch (tipoFormulario)
-            {
-                case "Estudiante":
-                    formulario = new EstudianteForm(centralDatos);
-                    break;
-                case "Persona":
-                    formulario = new PersonaForm(centralDatos);
-                    break;
-                case "Programa":
-                    formulario = new ProgramaForm(centralDatos);
-                    break;
-                case "Facultad":
-                    formulario = new FacultadForm(centralDatos);
-                    break;
-                case "Profesor":
-                    formulario = new ProfesorForm(centralDatos);
-                    break;
-                case "Curso":
-                    formulario = new CursoForm(centralDatos);
-                    break;
-                case "Inscripcion":
-                    formulario = new InscripcionForm(centralDatos);
-                    break;
-                case "Curso con profesor":
-                    formulario = new CursoProfesorForm(centralDatos);
-                    break;
-                default:
-                    MessageBox.Show("Selecciona un tipo v�lido.");
-                    return;
+            
+            try // Este try por alguna razon no funciona
+            { 
+                UserControl formulario = FabricaFormularios.CrearFormulario(tipoFormulario, centralDatos);
+                gestorPestanas.AgregarPestana(formulario, "Pestaña " + (gestorPestanas.NumeroPestanas + 1));
             }
-
-            // Configurar el formulario para que se muestre dentro de la pesta�a
-            gestorPestanas.AgregarPestana( formulario, "Pestaña " + (gestorPestanas.NumeroPestanas + 1));
+            catch (ArgumentException ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
 
         private void Form1_FormClosing(object sender, FormClosingEventArgs e)
@@ -97,15 +74,8 @@ namespace Actividad
 
         private void button2_Click(object sender, EventArgs e)
         {
-            TabPage nuevaPestania = new TabPage();
-            nuevaPestania.Text = "Pesta�a " + (tabControl1.TabCount + 1);
-
-            Modificar modificar = new Modificar(centralDatos, tabControl1);
-            modificar.Dock = DockStyle.Fill;
-            nuevaPestania.Controls.Add(modificar);
-            modificar.Show();
-            tabControl1.TabPages.Add(nuevaPestania);
-            tabControl1.SelectedTab = nuevaPestania;
+            ModificarForm modificar = new ModificarForm(centralDatos, gestorPestanas);
+            gestorPestanas.AgregarPestana(modificar, "Modificar");
         }
     }
 }
