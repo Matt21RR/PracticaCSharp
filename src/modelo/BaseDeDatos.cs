@@ -9,6 +9,18 @@ public class BaseDeDatos
         return s1.getConnection();
     }
 
+    private static void ReemplazarPlaceholdersEnComando(MySqlCommand cmd, List<string> indices, Dictionary<string,object> datos){
+      foreach (var llave in indices){
+        if(llave.Contains("_")){
+          string llaveA = llave.Split("_")[0];
+          string llaveB = llave.Split("_")[1];
+          cmd.Parameters.AddWithValue("@"+llave, datos[llaveA].GetType().GetProperty(llaveB).GetValue(datos[llaveA]));
+        }else{
+          cmd.Parameters.AddWithValue("@"+llave,datos[llave]);
+        }
+      }
+    }
+
     public static void EjecutarInsert(string nombreTabla, List<string> indices, Dictionary<string,object> datos){
       string sql = "";
       sql += "INSERT INTO " +nombreTabla;
@@ -23,15 +35,8 @@ public class BaseDeDatos
       MySqlCommand cmd = new MySqlCommand(sql, conexion);
 
       //Obtener y reemplazar los valores en el sql
-      foreach (var llave in indices){
-        if(llave.Contains("_")){
-          string llaveA = llave.Split("_")[0];
-          string llaveB = llave.Split("_")[1];
-          cmd.Parameters.AddWithValue("@"+llave, datos[llaveA].GetType().GetProperty(llaveB).GetValue(datos[llaveA]));
-        }else{
-          cmd.Parameters.AddWithValue("@"+llave,datos[llave]);
-        }
-      }
+      ReemplazarPlaceholdersEnComando(cmd,indices,datos);
+
       cmd.ExecuteNonQuery();
     }
 
@@ -44,19 +49,11 @@ public class BaseDeDatos
       Console.WriteLine(sql);
 
       MySqlConnection conexion = GetConnection();
-
       MySqlCommand cmd = new MySqlCommand(sql, conexion);
 
       //Obtener y reemplazar los valores en el sql
-      foreach (var llave in indicesClave){
-        if(llave.Contains("_")){
-          string llaveA = llave.Split("_")[0];
-          string llaveB = llave.Split("_")[1];
-          cmd.Parameters.AddWithValue("@"+llave, datos[llaveA].GetType().GetProperty(llaveB).GetValue(datos[llaveA]));
-        }else{
-          cmd.Parameters.AddWithValue("@"+llave,datos[llave]);
-        }
-      }
+      ReemplazarPlaceholdersEnComando(cmd,indicesClave,datos);
+
       using (MySqlDataReader reader = cmd.ExecuteReader()){
         if (reader.Read()){// Si se encuentra el usuario
           Dictionary<string,object> res = Enumerable.Range(0, reader.FieldCount).ToDictionary(reader.GetName, reader.GetValue);
@@ -103,17 +100,9 @@ public class BaseDeDatos
       MySqlCommand cmd = new MySqlCommand(sql, conexion);
 
       //Obtener y reemplazar los valores en el sql
-      foreach (var llave in indices){
-        if(llave.Contains("_")){
-          string llaveA = llave.Split("_")[0];
-          string llaveB = llave.Split("_")[1];
-          cmd.Parameters.AddWithValue("@"+llave, datos[llaveA].GetType().GetProperty(llaveB).GetValue(datos[llaveA]));
-        }else{
-          cmd.Parameters.AddWithValue("@"+llave,datos[llave]);
-        }
-      }
+      ReemplazarPlaceholdersEnComando(cmd,indices,datos);
+      
       cmd.ExecuteNonQuery();
-      conexion.Close();
     }
 
     public static void EjecutarDelete(string nombreTabla, List<string> indicesClave, Dictionary<string,object> datos){
@@ -128,15 +117,8 @@ public class BaseDeDatos
       MySqlCommand cmd = new MySqlCommand(sql, conexion);
 
       //Obtener y reemplazar los valores en el sql
-      foreach (var llave in indicesClave){
-        if(llave.Contains("_")){
-          string llaveA = llave.Split("_")[0];
-          string llaveB = llave.Split("_")[1];
-          cmd.Parameters.AddWithValue("@"+llave, datos[llaveA].GetType().GetProperty(llaveB).GetValue(datos[llaveA]));
-        }else{
-          cmd.Parameters.AddWithValue("@"+llave,datos[llave]);
-        }
-      }
+      ReemplazarPlaceholdersEnComando(cmd,indicesClave,datos);
+
       cmd.ExecuteNonQuery();
     }
 
