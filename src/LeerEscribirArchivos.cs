@@ -1,5 +1,7 @@
 using System;
 using System.IO;
+using System.Reflection;
+using System.Reflection.Metadata.Ecma335;
 using System.Text;
 using System.Text.Json;
 
@@ -19,8 +21,12 @@ public static class LeerEscribirArchivos
         crearDirectorioDatosPrograma();
         try
         {
-            string jsonString = JsonSerializer.Serialize(value);
-            File.AppendAllText(nombreArchivo, jsonString + Environment.NewLine);
+            if(typeof(T).ToString() == "System.String"){
+                File.AppendAllText(nombreArchivo, value as string);
+            }else{
+                string jsonString = JsonSerializer.Serialize(value);
+                File.AppendAllText(nombreArchivo, jsonString + Environment.NewLine);
+            }
         }
         catch (Exception ex)
         {
@@ -62,9 +68,17 @@ public static class LeerEscribirArchivos
                 throw new FileNotFoundException("File not found");
 
             string jsonString = File.ReadAllText(nombreArchivo);
-            jsonString = "[" + jsonString.Replace(Environment.NewLine, ",").TrimEnd(',') + "]";
 
-            return JsonSerializer.Deserialize<T>(jsonString);
+            
+            Console.WriteLine(jsonString);
+            if(typeof(T).ToString() == "System.String"){
+                return (T)Convert.ChangeType(jsonString,typeof(T));
+            }else{
+                jsonString = "[" + jsonString.Replace(Environment.NewLine, ",").TrimEnd(',') + "]";
+                return JsonSerializer.Deserialize<T>(jsonString);
+            }
+
+
         }
         catch (Exception ex)
         {

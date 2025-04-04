@@ -3,11 +3,10 @@ using MySql.Data.MySqlClient;
 
 public class BaseDeDatos
 {
-    private static string connectionString = "Server=127.0.0.1;Database=csharp;Uid=csharp;Pwd=csharp;";
-
     private static MySqlConnection GetConnection()
     {
-        return new MySqlConnection(connectionString);
+        ConexionBaseDeDatos s1 = ConexionBaseDeDatos.getInstance();
+        return s1.getConnection();
     }
 
     public static void EjecutarInsert(string nombreTabla, List<string> indices, Dictionary<string,object> datos){
@@ -20,7 +19,7 @@ public class BaseDeDatos
       Console.WriteLine(sql);
 
       MySqlConnection conexion = GetConnection();
-      conexion.Open();
+
       MySqlCommand cmd = new MySqlCommand(sql, conexion);
 
       //Obtener y reemplazar los valores en el sql
@@ -34,7 +33,6 @@ public class BaseDeDatos
         }
       }
       cmd.ExecuteNonQuery();
-      conexion.Close();
     }
 
     public static Dictionary<string,object> EjecutarSelectEspecifico(string nombreTabla, List<string> indicesClave, Dictionary<string,object> datos){
@@ -46,7 +44,7 @@ public class BaseDeDatos
       Console.WriteLine(sql);
 
       MySqlConnection conexion = GetConnection();
-      conexion.Open();
+
       MySqlCommand cmd = new MySqlCommand(sql, conexion);
 
       //Obtener y reemplazar los valores en el sql
@@ -63,11 +61,9 @@ public class BaseDeDatos
         if (reader.Read()){// Si se encuentra el usuario
           Dictionary<string,object> res = Enumerable.Range(0, reader.FieldCount).ToDictionary(reader.GetName, reader.GetValue);
           reader.Close();
-          conexion.Close();
           return res;
         }else{
           reader.Close();
-          conexion.Close();
           throw new Exception("Registro no encontrado en la tabla "+nombreTabla);
         }
       }
@@ -80,7 +76,6 @@ public class BaseDeDatos
       Console.WriteLine(sql);
 
       MySqlConnection conexion = GetConnection();
-      conexion.Open();
       MySqlCommand cmd = new MySqlCommand(sql, conexion);
 
       List<Dictionary<string,object>> resList = [];
@@ -90,9 +85,6 @@ public class BaseDeDatos
         }
         reader.Close();
       }
-
-      conexion.Close();
-
       return resList;
     }
 
@@ -108,7 +100,6 @@ public class BaseDeDatos
       Console.WriteLine(sql);
 
       MySqlConnection conexion = GetConnection();
-      conexion.Open();
       MySqlCommand cmd = new MySqlCommand(sql, conexion);
 
       //Obtener y reemplazar los valores en el sql
@@ -134,7 +125,6 @@ public class BaseDeDatos
       Console.WriteLine(sql);
 
       MySqlConnection conexion = GetConnection();
-      conexion.Open();
       MySqlCommand cmd = new MySqlCommand(sql, conexion);
 
       //Obtener y reemplazar los valores en el sql
@@ -148,7 +138,6 @@ public class BaseDeDatos
         }
       }
       cmd.ExecuteNonQuery();
-      conexion.Close();
     }
 
 }
